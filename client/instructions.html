@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Exam Instructions | Board Exam Practice Platform</title>
+
+    <meta name="description"
+        content="Read the examination instructions carefully before starting the practice exam.">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        :root{
+
+            --primary:#4F46E5;
+            --secondary:#7C3AED;
+            --accent:#3B82F6;
+
+            --success:#22C55E;
+            --warning:#F59E0B;
+            --danger:#EF4444;
+
+            --text:#1F2937;
+            --text-light:#64748B;
+
+            --glass:rgba(255,255,255,.65);
+
+            --border:rgba(255,255,255,.45);
+
+            --shadow:0 18px 45px rgba(0,0,0,.08);
+
+            --radius:18px;
+
+            --background:
+                linear-gradient(135deg,#EEF2FF,#DBEAFE,#EDE9FE);
+
+        }
+
+        body{
+
+            font-family:"Poppins",sans-serif;
+
+            background:var(--background);
+
+            color:var(--text);
+
+            min-height:100vh;
+
+            overflow-x:hidden;
+
+        }
+
+        a{
+            text-decoration:none;
+            color:inherit;
+        }
+
+        button{
+            cursor:pointer;
+            font-family:inherit;
+        }
+
+        .container{
+
+            width:min(1400px,94%);
+
+            margin:auto;
+
+        }
+
+        /* ================= HEADER ================= */
+
+        header{
+
+            margin-top:30px;
+
+            background:var(--glass);
+
+            backdrop-filter:blur(18px);
+
+            border:1px solid var(--border);
+
+            border-radius:22px;
+
+            padding:22px 30px;
+
+            display:flex;
+
+            justify-content:space-between;
+
+            align-items:center;
+
+            box-shadow:var(--shadow);
+
+            gap:20px;
+
+            flex-wrap:wrap;
+
+        }
+
+        .logo{
+
+            display:flex;
+
+            align-items:center;
+
+            gap:16px;
+
+        }
+
+        .logo-icon{
+
+            width:62px;
+
+            height:62px;
+
+            border-radius:18px;
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+
+            color:white;
+
+            font-size:25px;
+
+            background:linear-gradient(135deg,var(--primary),var(--secondary));
+
+            box-shadow:0 12px 30px rgba(79,70,229,.35);
+
+        }
+
+        .logo h2{
+
+            font-size:23px;
+
+            font-weight:700;
+
+        }
+
+        .logo span{
+
+            display:block;
+
+            font-size:13px;
+
+            color:var(--text-light);
+
+        }
+
+        .theme-btn{
+
+            width:50px;
+
+            height:50px;
+
+            border:none;
+
+            border-radius:15px;
+
+            background:white;
+
+            color:var(--primary);
+
+            box-shadow:var(--shadow);
+
+            font-size:18px;
+
+        }
+
+        /* ================= HERO ================= */
+
+        .hero{
+
+            margin-top:28px;
+
+            background:var(--glass);
+
+            backdrop-filter:blur(18px);
+
+            border-radius:22px;
+
+            border:1px solid var(--border);
+
+            box-shadow:var(--shadow);
+
+            padding:35px;
+
+        }
+
+        .hero-top{
+
+            display:flex;
+
+            justify-content:space-between;
+
+            align-items:center;
+
+            gap:25px;
+
+            flex-wrap:wrap;
+
+        }
+
+        .hero h1{
+
+            font-size:34px;
+
+            margin-bottom:10px;
+
+        }
+
+        .hero p{
+
+            color:var(--text-light);
+
+        }
+
+        .badge{
+
+            padding:10px 18px;
+
+            border-radius:50px;
+
+            color:white;
+
+            background:linear-gradient(135deg,var(--primary),var(--secondary));
+
+            font-weight:600;
+
+        }
+
+        /* ================= GRID ================= */
+
+        .grid{
+
+            margin-top:30px;
+
+            display:grid;
+
+            grid-template-columns:2fr 1fr;
+
+            gap:25px;
+
+        }
+
+        .card{
+
+            background:var(--glass);
+
+            backdrop-filter:blur(18px);
+
+            border:1px solid var(--border);
+
+            border-radius:20px;
+
+            padding:28px;
+
+            box-shadow:var(--shadow);
+
+        }
+
+        .card-title{
+
+            display:flex;
+
+            justify-content:space-between;
+
+            align-items:center;
+
+            margin-bottom:24px;
+
+        }
+
+        .card-title h3{
+
+            font-size:22px;
+
+        }
+
+        .info-grid{
+
+            display:grid;
+
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+            gap:20px;
+
+        }
+
+        .info-box{
+
+            background:white;
+
+            border-radius:16px;
+
+            padding:18px;
+
+            box-shadow:0 8px 20px rgba(0,0,0,.05);
+
+        }
+
+        .info-box small{
+
+            color:var(--text-light);
+
+            display:block;
+
+            margin-bottom:8px;
+
+        }
+
+        .info-box h4{
+
+            font-size:18px;
+
+            font-weight:600;
+
+        }
+
+        .exam-details{
+
+            display:flex;
+
+            flex-direction:column;
+
+            gap:18px;
+
+        }
+
+        .detail{
+
+            display:flex;
+
+            justify-content:space-between;
+
+            align-items:center;
+
+            border-bottom:1px solid rgba(0,0,0,.08);
+
+            padding-bottom:12px;
+
+        }
+
+        .detail:last-child{
+
+            border-bottom:none;
+
+        }
+
+        .detail span{
+
+            color:var(--text-light);
+
+        }
+
+        .detail strong{
+
+            font-weight:600;
+
+        }
+
+        @media(max-width:980px){
+
+            .grid{
+
+                grid-template-columns:1fr;
+
+            }
+
+        }
+
+        @media(max-width:700px){
+
+            .hero h1{
+
+                font-size:28px;
+
+            }
+
+            header{
+
+                padding:20px;
+
+            }
+
+            .hero{
+
+                padding:25px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+
+            <div class="logo-icon">
+
+                <i class="fas fa-graduation-cap"></i>
+
+            </div>
+
+            <div>
+
+                <h2>Board Exam Practice Platform</h2>
+
+                <span>Online Examination Practice System</span>
+
+            </div>
+
+        </div>
+
+        <button class="theme-btn" id="themeToggle">
+
+            <i class="fas fa-moon"></i>
+
+        </button>
+
+    </header>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-top">
+
+            <div>
+
+                <h1>Examination Instructions</h1>
+
+                <p>Please read all instructions carefully before starting your examination.</p>
+
+            </div>
+
+            <span class="badge">
+
+                Ready to Begin
+
+            </span>
+
+        </div>
+
+    </section>
+
+    <!-- ================= MAIN GRID ================= -->
+
+    <section class="grid">
+
+        <!-- ================= STUDENT DETAILS ================= -->
+
+        <div class="card">
+
+            <div class="card-title">
+
+                <h3>
+
+                    <i class="fas fa-user-graduate"></i>
+
+                    Student Information
+
+                </h3>
+
+            </div>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <small>Student Name</small>
+
+                    <h4 id="studentName">Student Name</h4>
+
+                </div>
+
+                <div class="info-box">
+
+                    <small>Roll Number</small>
+
+                    <h4 id="rollNumber">000000</h4>
+
+                </div>
+
+                <div class="info-box">
+
+                    <small>Exam Name</small>
+
+                    <h4>HSC Board Practice Test</h4>
+
+                </div>
+
+                <div class="info-box">
+
+                    <small>Subject</small>
+
+                    <h4>Physics</h4>
+
+                </div>
+
+                <div class="info-box">
+
+                    <small>Duration</small>
+
+                    <h4>03 Hours</h4>
+
+                </div>
+
+                <div class="info-box">
+
+                    <small>Total Questions</small>
+
+                    <h4>100</h4>
+
+                </div>
+
+                <div class="info-box">
+
+                    <small>Total Marks</small>
+
+                    <h4>100 Marks</h4>
+
+                </div>
+
+                <div class="info-box">
+
+                    <small>Passing Marks</small>
+
+                    <h4>35 Marks</h4>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ================= EXAM INFO ================= -->
+
+        <aside class="card">
+
+            <div class="card-title">
+
+                <h3>
+
+                    <i class="fas fa-file-lines"></i>
+
+                    Exam Information
+
+                </h3>
+
+            </div>
+
+            <div class="exam-details">
+
+                <div class="detail">
+
+                    <span>Exam Title</span>
+
+                    <strong>Physics Board Practice</strong>
+
+                </div>
+
+                <div class="detail">
+
+                    <span>Subject</span>
+
+                    <strong>Physics</strong>
+
+                </div>
+
+                <div class="detail">
+
+                    <span>Duration</span>
+
+                    <strong>180 Minutes</strong>
+
+                </div>
+
+                <div class="detail">
+
+                    <span>Question Type</span>
+
+                    <strong>MCQ + Theory</strong>
+
+                </div>
+
+                <div class="detail">
+
+                    <span>Start Time</span>
+
+                    <strong>09:00 AM</strong>
+
+                </div>
+
+                <div class="detail">
+
+                    <span>End Time</span>
+
+                    <strong>12:00 PM</strong>
+
+                </div>
+
+                <div class="detail">
+
+                    <span>Negative Marking</span>
+
+                    <strong>No</strong>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+<!-- END OF PART 1 -->
+
+        <!-- ================= EXAM INSTRUCTIONS ================= -->
+
+        <div class="card" style="margin-top:25px;">
+
+            <div class="card-title">
+                <h3>
+                    <i class="fas fa-list-check"></i>
+                    Examination Instructions
+                </h3>
+            </div>
+
+            <ol class="instruction-list">
+
+                <li>Read every question carefully before selecting or writing your answer.</li>
+
+                <li>Do not refresh or reload the page during the examination.</li>
+
+                <li>Do not close the browser window until the exam is completed.</li>
+
+                <li>The examination timer starts immediately and cannot be paused.</li>
+
+                <li>Your answers are automatically saved while attempting the exam.</li>
+
+                <li>Use the <strong>Save &amp; Next</strong> button to move to the next question.</li>
+
+                <li>You may return to previously visited questions before final submission.</li>
+
+                <li>Use <strong>Mark for Review</strong> if you wish to revisit a question later.</li>
+
+                <li>The examination will be submitted automatically when the timer reaches zero.</li>
+
+                <li>Please ensure you have a stable internet connection throughout the examination.</li>
+
+            </ol>
+
+        </div>
+
+        <!-- ================= QUESTION LEGEND ================= -->
+
+        <div class="card" style="margin-top:25px;">
+
+            <div class="card-title">
+
+                <h3>
+
+                    <i class="fas fa-square-check"></i>
+
+                    Question Legend
+
+                </h3>
+
+            </div>
+
+            <div class="legend-grid">
+
+                <div class="legend-item">
+                    <span class="legend-box answered"></span>
+                    <span>Answered</span>
+                </div>
+
+                <div class="legend-item">
+                    <span class="legend-box not-answered"></span>
+                    <span>Not Answered</span>
+                </div>
+
+                <div class="legend-item">
+                    <span class="legend-box not-visited"></span>
+                    <span>Not Visited</span>
+                </div>
+
+                <div class="legend-item">
+                    <span class="legend-box review"></span>
+                    <span>Marked for Review</span>
+                </div>
+
+                <div class="legend-item">
+                    <span class="legend-box answered-review"></span>
+                    <span>Answered &amp; Marked for Review</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ================= ANTI CHEATING ================= -->
+
+        <div class="card" style="margin-top:25px; border-left:6px solid #EF4444;">
+
+            <div class="card-title">
+
+                <h3 style="color:#EF4444;">
+
+                    <i class="fas fa-shield-halved"></i>
+
+                    Anti-Cheating Notice
+
+                </h3>
+
+            </div>
+
+            <ul class="warning-list">
+
+                <li>Fullscreen mode will be requested before the examination begins.</li>
+
+                <li>Leaving the examination tab may generate a warning.</li>
+
+                <li>Repeated violations may automatically submit your examination.</li>
+
+                <li>Right-click and common shortcut keys may be restricted during the exam.</li>
+
+                <li>Your activity may be recorded for practice analytics and integrity checks.</li>
+
+            </ul>
+
+        </div>
+
+        <!-- ================= DECLARATION ================= -->
+
+        <div class="card" style="margin-top:25px;">
+
+            <div class="card-title">
+
+                <h3>
+
+                    <i class="fas fa-circle-check"></i>
+
+                    Declaration
+
+                </h3>
+
+            </div>
+
+            <label class="declaration">
+
+                <input type="checkbox" id="agreeCheckbox">
+
+                <span>
+
+                    I have read and understood all the instructions. I agree to follow the examination rules and regulations.
+
+                </span>
+
+            </label>
+
+            <div class="action-buttons">
+
+                <button id="backBtn" class="secondary-btn">
+
+                    <i class="fas fa-arrow-left"></i>
+
+                    Back
+
+                </button>
+
+                <button id="startExamBtn" class="primary-btn" disabled>
+
+                    <i class="fas fa-play"></i>
+
+                    Start Exam
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <style>
+
+        .instruction-list{
+
+            padding-left:25px;
+
+            display:grid;
+
+            gap:16px;
+
+            line-height:1.8;
+
+        }
+
+        .instruction-list li{
+
+            color:#374151;
+
+        }
+
+        .legend-grid{
+
+            display:grid;
+
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+            gap:18px;
+
+        }
+
+        .legend-item{
+
+            display:flex;
+
+            align-items:center;
+
+            gap:15px;
+
+            background:white;
+
+            padding:15px;
+
+            border-radius:14px;
+
+            box-shadow:0 8px 18px rgba(0,0,0,.05);
+
+        }
+
+        .legend-box{
+
+            width:24px;
+
+            height:24px;
+
+            border-radius:6px;
+
+            display:inline-block;
+
+        }
+
+        .answered{
+
+            background:#22C55E;
+
+        }
+
+        .not-answered{
+
+            background:#EF4444;
+
+        }
+
+        .not-visited{
+
+            background:#CBD5E1;
+
+        }
+
+        .review{
+
+            background:#A855F7;
+
+        }
+
+        .answered-review{
+
+            background:linear-gradient(135deg,#22C55E,#A855F7);
+
+        }
+
+        .warning-list{
+
+            padding-left:22px;
+
+            display:grid;
+
+            gap:14px;
+
+            line-height:1.8;
+
+        }
+
+        .warning-list li{
+
+            color:#7F1D1D;
+
+            font-weight:500;
+
+        }
+
+        .declaration{
+
+            display:flex;
+
+            align-items:flex-start;
+
+            gap:15px;
+
+            font-size:15px;
+
+            line-height:1.7;
+
+        }
+
+        .declaration input{
+
+            margin-top:4px;
+
+            width:20px;
+
+            height:20px;
+
+            accent-color:#4F46E5;
+
+        }
+
+        .action-buttons{
+
+            margin-top:35px;
+
+            display:flex;
+
+            justify-content:space-between;
+
+            gap:20px;
+
+            flex-wrap:wrap;
+
+        }
+
+        .primary-btn{
+
+            border:none;
+
+            padding:14px 28px;
+
+            border-radius:14px;
+
+            color:#fff;
+
+            background:linear-gradient(135deg,#4F46E5,#7C3AED);
+
+            font-weight:600;
+
+            font-size:15px;
+
+            transition:.3s;
+
+        }
+
+        .primary-btn:disabled{
+
+            opacity:.55;
+
+            cursor:not-allowed;
+
+        }
+
+        .secondary-btn{
+
+            border:none;
+
+            padding:14px 28px;
+
+            border-radius:14px;
+
+            background:#E5E7EB;
+
+            color:#111827;
+
+            font-weight:600;
+
+            font-size:15px;
+
+        }
+
+    </style>
+
+<!-- END OF PART 2 -->
+
+<!-- END OF PART 2 -->
+
+<!-- =========================
+START EXAM CONFIRMATION MODAL
+========================= -->
+
+<div class="modal-overlay" id="confirmModal">
+
+    <div class="confirm-modal">
+
+        <div class="modal-icon">
+            <i class="fas fa-circle-question"></i>
+        </div>
+
+        <h2>Start Examination?</h2>
+
+        <p>
+            Are you sure you want to begin the exam?<br>
+            The timer will start immediately after clicking
+            <strong>Start Now</strong>.
+        </p>
+
+        <div class="modal-actions">
+
+            <button id="cancelStart" class="secondary-btn">
+                Cancel
+            </button>
+
+            <button id="confirmStart" class="primary-btn">
+                <i class="fas fa-play"></i>
+                Start Now
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+LOADING OVERLAY
+========================= -->
+
+<div class="loading-overlay" id="loadingOverlay">
+
+    <div class="loader-card">
+
+        <div class="loader"></div>
+
+        <h3>Preparing Your Exam...</h3>
+
+        <p>Please wait. The timer will start shortly.</p>
+
+    </div>
+
+</div>
+
+<script src="js/app.js"></script>
+
+<script>
+
+/* =========================
+Theme Toggle
+========================= */
+
+const themeToggle = document.getElementById("themeToggle");
+
+if(localStorage.getItem("instructions-theme")==="dark"){
+
+    document.body.classList.add("dark-mode");
+
+    themeToggle.innerHTML='<i class="fas fa-sun"></i>';
+
+}
+
+themeToggle.addEventListener("click",()=>{
+
+    document.body.classList.toggle("dark-mode");
+
+    if(document.body.classList.contains("dark-mode")){
+
+        localStorage.setItem("instructions-theme","dark");
+
+        themeToggle.innerHTML='<i class="fas fa-sun"></i>';
+
+    }else{
+
+        localStorage.setItem("instructions-theme","light");
+
+        themeToggle.innerHTML='<i class="fas fa-moon"></i>';
+
+    }
+
+});
+
+/* =========================
+Declaration Validation
+========================= */
+
+const checkbox=document.getElementById("agreeCheckbox");
+
+const startBtn=document.getElementById("startExamBtn");
+
+checkbox.addEventListener("change",()=>{
+
+    startBtn.disabled=!checkbox.checked;
+
+});
+
+/* =========================
+Back Button
+========================= */
+
+document.getElementById("backBtn").addEventListener("click",()=>{
+
+    history.back();
+
+});
+
+/* =========================
+Confirmation Modal
+========================= */
+
+const modal=document.getElementById("confirmModal");
+
+startBtn.addEventListener("click",()=>{
+
+    modal.classList.add("show");
+
+});
+
+document.getElementById("cancelStart").addEventListener("click",()=>{
+
+    modal.classList.remove("show");
+
+});
+
+window.addEventListener("click",(e)=>{
+
+    if(e.target===modal){
+
+        modal.classList.remove("show");
+
+    }
+
+});
+
+/* =========================
+Smooth Loading & Redirect
+========================= */
+
+document.getElementById("confirmStart").addEventListener("click",()=>{
+
+    modal.classList.remove("show");
+
+    const overlay=document.getElementById("loadingOverlay");
+
+    overlay.classList.add("show");
+
+    setTimeout(()=>{
+
+        window.location.href="exam.html";
+
+    },2000);
+
+});
+
+/* =========================
+Accessibility
+========================= */
+
+document.addEventListener("keydown",(e)=>{
+
+    if(e.key==="Escape" && modal.classList.contains("show")){
+
+        modal.classList.remove("show");
+
+    }
+
+});
+
+</script>
+
+<style>
+
+/* =========================
+MODAL
+========================= */
+
+.modal-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(15,23,42,.55);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:999;
+
+    backdrop-filter:blur(8px);
+
+}
+
+.modal-overlay.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.confirm-modal{
+
+    width:min(430px,92%);
+
+    background:white;
+
+    border-radius:22px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:0 30px 60px rgba(0,0,0,.18);
+
+    animation:popup .35s ease;
+
+}
+
+.modal-icon{
+
+    width:75px;
+
+    height:75px;
+
+    margin:auto;
+
+    margin-bottom:20px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:34px;
+
+    color:#4F46E5;
+
+    background:#EEF2FF;
+
+}
+
+.confirm-modal h2{
+
+    margin-bottom:15px;
+
+}
+
+.confirm-modal p{
+
+    color:#64748B;
+
+    line-height:1.7;
+
+}
+
+.modal-actions{
+
+    margin-top:28px;
+
+    display:flex;
+
+    gap:15px;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+}
+
+@keyframes popup{
+
+    from{
+
+        transform:translateY(20px) scale(.95);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateY(0) scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+/* =========================
+LOADER
+========================= */
+
+.loading-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(255,255,255,.95);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    visibility:hidden;
+
+    opacity:0;
+
+    transition:.3s;
+
+    z-index:1000;
+
+}
+
+.loading-overlay.show{
+
+    visibility:visible;
+
+    opacity:1;
+
+}
+
+.loader-card{
+
+    text-align:center;
+
+}
+
+.loader{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    border:7px solid #DDE7FF;
+
+    border-top-color:#4F46E5;
+
+    margin:auto;
+
+    animation:spin 1s linear infinite;
+
+}
+
+.loader-card h3{
+
+    margin-top:25px;
+
+}
+
+.loader-card p{
+
+    color:#64748B;
+
+    margin-top:10px;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* =========================
+DARK MODE
+========================= */
+
+body.dark-mode{
+
+    background:#0F172A;
+
+    color:#F8FAFC;
+
+}
+
+body.dark-mode .card,
+body.dark-mode header,
+body.dark-mode .hero{
+
+    background:rgba(30,41,59,.88);
+
+    color:#F8FAFC;
+
+    border-color:rgba(255,255,255,.08);
+
+}
+
+body.dark-mode .info-box,
+body.dark-mode .legend-item,
+body.dark-mode .confirm-modal{
+
+    background:#1E293B;
+
+    color:#F8FAFC;
+
+}
+
+body.dark-mode .detail{
+
+    border-color:rgba(255,255,255,.08);
+
+}
+
+body.dark-mode .detail span,
+body.dark-mode .loader-card p,
+body.dark-mode .hero p,
+body.dark-mode .logo span{
+
+    color:#CBD5E1;
+
+}
+
+body.dark-mode .loading-overlay{
+
+    background:rgba(2,6,23,.95);
+
+}
+
+body.dark-mode .secondary-btn{
+
+    background:#334155;
+
+    color:#fff;
+
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    .modal-actions{
+
+        flex-direction:column;
+
+    }
+
+    .primary-btn,
+    .secondary-btn{
+
+        width:100%;
+
+    }
+
+}
+
+</style>
+
+</body>
+
+</html>

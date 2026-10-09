@@ -1,0 +1,1472 @@
+/*==================================================
+  Online Exam System
+  File: css/exam.css
+  Part 1
+  Reset • Variables • Theme • Layout • Header
+==================================================*/
+
+/*==============================
+  RESET
+==============================*/
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    font-size:16px;
+    scroll-behavior:smooth;
+    -webkit-text-size-adjust:100%;
+}
+
+body{
+    min-height:100vh;
+    font-family:
+        Inter,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    background:#f5f7fb;
+    color:#1f2937;
+    line-height:1.5;
+    overflow:hidden;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+button,
+input,
+select,
+textarea{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+    border:none;
+    background:none;
+}
+
+textarea{
+    resize:vertical;
+}
+
+ul{
+    list-style:none;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+table{
+    border-collapse:collapse;
+}
+
+/*==============================
+  ROOT VARIABLES
+==============================*/
+
+:root{
+
+    --primary:#2563eb;
+    --primary-dark:#1d4ed8;
+
+    --success:#16a34a;
+    --danger:#dc2626;
+    --warning:#d97706;
+    --purple:#7c3aed;
+    --info:#0ea5e9;
+
+    --bg:#f5f7fb;
+    --surface:#ffffff;
+
+    --border:#dbe2ef;
+
+    --text:#1f2937;
+    --muted:#6b7280;
+
+    --shadow-sm:
+        0 2px 6px rgba(0,0,0,.08);
+
+    --shadow:
+        0 8px 25px rgba(0,0,0,.10);
+
+    --shadow-lg:
+        0 20px 40px rgba(0,0,0,.15);
+
+    --radius:14px;
+    --radius-sm:8px;
+
+    --header-height:72px;
+
+    --topbar-height:70px;
+
+    --sidebar-width:300px;
+
+    --utility-width:340px;
+
+    --transition:.25s ease;
+
+}
+
+/*==============================
+  DARK THEME
+==============================*/
+
+body.dark{
+
+    --bg:#0f172a;
+
+    --surface:#1e293b;
+
+    --border:#334155;
+
+    --text:#f8fafc;
+
+    --muted:#94a3b8;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+}
+
+/*==============================
+  SCROLLBAR
+==============================*/
+
+::-webkit-scrollbar{
+    width:10px;
+    height:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:transparent;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#b7c0d4;
+    border-radius:30px;
+
+}
+
+body.dark ::-webkit-scrollbar-thumb{
+
+    background:#475569;
+
+}
+
+/*==============================
+  SELECTION
+==============================*/
+
+::selection{
+
+    background:var(--primary);
+    color:#fff;
+
+}
+
+/*==============================
+  ACCESSIBILITY
+==============================*/
+
+:focus-visible{
+
+    outline:3px solid var(--primary);
+    outline-offset:2px;
+
+}
+
+[hidden]{
+    display:none !important;
+}
+
+.visually-hidden{
+
+    position:absolute;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+
+}
+
+/*==============================
+  APP CONTAINER
+==============================*/
+
+.exam-app{
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    background:var(--bg);
+
+}
+
+/*==============================
+  HEADER
+==============================*/
+
+.exam-header{
+
+    height:var(--header-height);
+
+    background:var(--surface);
+
+    border-bottom:1px solid var(--border);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 24px;
+
+    box-shadow:var(--shadow-sm);
+
+    z-index:200;
+
+}
+
+/*==============================
+  BRAND
+==============================*/
+
+.exam-brand{
+
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+
+}
+
+.exam-title{
+
+    font-size:1.2rem;
+    font-weight:700;
+    color:var(--text);
+
+}
+
+.exam-subject{
+
+    font-size:.88rem;
+    color:var(--muted);
+
+}
+
+/*==============================
+  STUDENT INFO
+==============================*/
+
+.student-info{
+
+    display:flex;
+    align-items:center;
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.info-item{
+
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+
+}
+
+.info-label{
+
+    font-size:.72rem;
+    color:var(--muted);
+
+}
+
+.info-value{
+
+    font-weight:600;
+    color:var(--text);
+
+}
+
+/*==============================
+  STATUS BADGES
+==============================*/
+
+.status-group{
+
+    display:flex;
+    gap:10px;
+    align-items:center;
+
+}
+
+.status-badge{
+
+    padding:8px 12px;
+
+    border-radius:30px;
+
+    font-size:.78rem;
+
+    font-weight:600;
+
+    display:flex;
+    align-items:center;
+    gap:6px;
+
+}
+
+.status-online{
+
+    background:#dcfce7;
+    color:#166534;
+
+}
+
+.status-saving{
+
+    background:#fef3c7;
+    color:#92400e;
+
+}
+
+.status-saved{
+
+    background:#dbeafe;
+    color:#1e40af;
+
+}
+
+.status-fullscreen{
+
+    background:#ede9fe;
+    color:#6d28d9;
+
+}
+
+/*==============================
+  TOP BAR
+==============================*/
+
+.exam-topbar{
+
+    height:var(--topbar-height);
+
+    background:var(--surface);
+
+    border-bottom:1px solid var(--border);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 24px;
+
+}
+
+/*==============================
+  TIMER
+==============================*/
+
+.timer-box{
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+}
+
+.timer{
+
+    font-size:1.35rem;
+    font-weight:700;
+    color:var(--danger);
+
+    letter-spacing:1px;
+
+}
+
+.timer.warning{
+
+    animation:pulse 1s infinite;
+
+}
+
+.timer.safe{
+
+    color:var(--success);
+
+}
+
+/*==============================
+  QUESTION COUNTER
+==============================*/
+
+.question-counter{
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+/*==============================
+  PROGRESS
+==============================*/
+
+.progress-wrapper{
+
+    width:280px;
+
+}
+
+.progress-label{
+
+    display:flex;
+    justify-content:space-between;
+
+    font-size:.82rem;
+
+    margin-bottom:6px;
+
+}
+
+.progress-bar{
+
+    width:100%;
+    height:10px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    background:#dbe2ef;
+
+}
+
+.progress-fill{
+
+    width:0;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #38bdf8
+    );
+
+    transition:width .4s ease;
+
+}
+
+/*==============================
+  TOP ACTIONS
+==============================*/
+
+.top-actions{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+}
+
+.icon-btn{
+
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    transition:var(--transition);
+
+}
+
+.icon-btn:hover{
+
+    transform:translateY(-2px);
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+/*==============================
+  MAIN GRID
+==============================*/
+
+.exam-main{
+
+    flex:1;
+
+    display:grid;
+
+    grid-template-columns:
+
+        var(--sidebar-width)
+
+        1fr
+
+        var(--utility-width);
+
+    overflow:hidden;
+
+}
+
+/*==============================
+  COMMON PANEL
+==============================*/
+
+.panel{
+
+    background:var(--surface);
+
+    overflow:auto;
+
+}
+
+.left-panel{
+
+    border-right:1px solid var(--border);
+
+}
+
+.center-panel{
+
+    background:var(--bg);
+
+}
+
+.right-panel{
+
+    border-left:1px solid var(--border);
+
+}
+
+/*==============================
+  PANEL HEADER
+==============================*/
+
+.panel-header{
+
+    padding:18px 20px;
+
+    border-bottom:1px solid var(--border);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:sticky;
+    top:0;
+
+    background:var(--surface);
+
+    z-index:50;
+
+}
+
+.panel-title{
+
+    font-size:1rem;
+    font-weight:700;
+
+}
+
+/*==============================
+  PANEL BODY
+==============================*/
+
+.panel-body{
+
+    padding:20px;
+
+}
+
+/*==============================
+  ANIMATIONS
+==============================*/
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.08);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(10px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.fade-in{
+
+    animation:fadeIn .35s ease;
+
+}
+
+/*==================================================
+  Online Exam System
+  File: css/exam.css
+  Part 2A
+  Left Sidebar • Question Palette • Navigator
+==================================================*/
+
+/*=========================================
+  LEFT SIDEBAR
+=========================================*/
+
+.left-panel{
+    display:flex;
+    flex-direction:column;
+    background:var(--surface);
+    overflow:hidden;
+}
+
+.sidebar-content{
+    flex:1;
+    overflow-y:auto;
+    padding:20px;
+}
+
+/*=========================================
+  NAVIGATOR HEADER
+=========================================*/
+
+.navigator-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
+}
+
+.navigator-title{
+    font-size:1rem;
+    font-weight:700;
+    color:var(--text);
+}
+
+.navigator-count{
+    font-size:.85rem;
+    color:var(--muted);
+    font-weight:600;
+}
+
+/*=========================================
+  SEARCH
+=========================================*/
+
+.question-search{
+    position:relative;
+    margin-bottom:20px;
+}
+
+.question-search input{
+    width:100%;
+    height:44px;
+    padding:0 14px;
+    border-radius:10px;
+    border:1px solid var(--border);
+    background:var(--bg);
+    color:var(--text);
+    transition:.25s;
+}
+
+.question-search input:focus{
+    border-color:var(--primary);
+    box-shadow:0 0 0 3px rgba(37,99,235,.15);
+}
+
+/*=========================================
+  QUESTION PALETTE GRID
+=========================================*/
+
+.question-palette{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(48px,1fr));
+    gap:12px;
+}
+
+/*=========================================
+  QUESTION BUTTON
+=========================================*/
+
+.palette-btn{
+    width:48px;
+    height:48px;
+    border-radius:12px;
+    border:2px solid transparent;
+    font-weight:700;
+    font-size:.92rem;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:.25s;
+    user-select:none;
+    position:relative;
+}
+
+.palette-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:var(--shadow-sm);
+}
+
+.palette-btn:active{
+    transform:scale(.95);
+}
+
+/*=========================================
+  CURRENT QUESTION
+=========================================*/
+
+.palette-btn.active{
+    border-color:var(--primary);
+    box-shadow:0 0 0 4px rgba(37,99,235,.15);
+}
+
+/*=========================================
+  STATUS
+=========================================*/
+
+/* Not Visited */
+
+.palette-btn.not-visited{
+    background:#d1d5db;
+    color:#111827;
+}
+
+/* Not Answered */
+
+.palette-btn.not-answered{
+    background:#ef4444;
+    color:#fff;
+}
+
+/* Answered */
+
+.palette-btn.answered{
+    background:#22c55e;
+    color:#fff;
+}
+
+/* Marked */
+
+.palette-btn.review{
+    background:#8b5cf6;
+    color:#fff;
+}
+
+/* Answered + Review */
+
+.palette-btn.answered-review{
+    background:#2563eb;
+    color:#fff;
+}
+
+/* Disabled */
+
+.palette-btn.disabled{
+    opacity:.5;
+    cursor:not-allowed;
+}
+
+/*=========================================
+  FLAG
+=========================================*/
+
+.palette-btn::after{
+    content:"";
+    position:absolute;
+    top:5px;
+    right:5px;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:transparent;
+}
+
+.palette-btn.review::after,
+.palette-btn.answered-review::after{
+    background:#fff;
+}
+
+/*=========================================
+  LEGEND
+=========================================*/
+
+.palette-legend{
+    margin-top:28px;
+    display:grid;
+    gap:14px;
+}
+
+.legend-title{
+    font-weight:700;
+    font-size:.95rem;
+    color:var(--text);
+}
+
+.legend-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:.9rem;
+    color:var(--muted);
+}
+
+.legend-color{
+    width:18px;
+    height:18px;
+    border-radius:5px;
+    flex-shrink:0;
+}
+
+.legend-gray{
+    background:#d1d5db;
+}
+
+.legend-red{
+    background:#ef4444;
+}
+
+.legend-green{
+    background:#22c55e;
+}
+
+.legend-purple{
+    background:#8b5cf6;
+}
+
+.legend-blue{
+    background:#2563eb;
+}
+
+/*=========================================
+  SIDEBAR PROGRESS
+=========================================*/
+
+.sidebar-progress{
+    margin-top:28px;
+    display:grid;
+    gap:18px;
+}
+
+.sidebar-progress h3{
+    font-size:.95rem;
+    color:var(--text);
+}
+
+.progress-card{
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:16px;
+}
+
+.progress-card-header{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+}
+
+.progress-card-title{
+    font-size:.85rem;
+    color:var(--muted);
+}
+
+.progress-card-value{
+    font-weight:700;
+}
+
+.progress-track{
+    height:8px;
+    border-radius:20px;
+    overflow:hidden;
+    background:#dbe2ef;
+}
+
+.progress-value{
+    height:100%;
+    width:0%;
+    transition:.35s ease;
+    border-radius:20px;
+}
+
+.progress-value.answered{
+    background:#22c55e;
+}
+
+.progress-value.skipped{
+    background:#ef4444;
+}
+
+.progress-value.review{
+    background:#8b5cf6;
+}
+
+/*=========================================
+  QUICK NAVIGATION
+=========================================*/
+
+.quick-navigation{
+    margin-top:30px;
+    display:grid;
+    gap:12px;
+}
+
+.quick-navigation button{
+    width:100%;
+    height:44px;
+    border-radius:10px;
+    background:var(--primary);
+    color:#fff;
+    font-weight:600;
+    transition:.25s;
+}
+
+.quick-navigation button:hover{
+    background:var(--primary-dark);
+}
+
+.quick-navigation button:disabled{
+    opacity:.6;
+    cursor:not-allowed;
+}
+
+/*=========================================
+  SCROLLBAR
+=========================================*/
+
+.sidebar-content::-webkit-scrollbar{
+    width:8px;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb{
+    background:#b7c0d4;
+    border-radius:20px;
+}
+
+body.dark .sidebar-content::-webkit-scrollbar-thumb{
+    background:#475569;
+}
+
+/*=========================================
+  SIDEBAR FOOTER
+=========================================*/
+
+.sidebar-footer{
+    padding:18px;
+    border-top:1px solid var(--border);
+    background:var(--surface);
+}
+
+.sidebar-footer small{
+    display:block;
+    color:var(--muted);
+    font-size:.82rem;
+    text-align:center;
+}
+
+/*=========================================
+  ANIMATIONS
+=========================================*/
+
+.palette-btn{
+    animation:fadeIn .25s ease;
+}
+
+.palette-btn.active{
+    animation:pulse .8s;
+}
+
+/*==================================================
+  Online Exam System
+  File: css/exam.css
+  Part 2B
+  Right Utility Panel • Statistics • Status Widgets
+==================================================*/
+
+/*=========================================
+  RIGHT PANEL
+=========================================*/
+
+.right-panel{
+    display:flex;
+    flex-direction:column;
+    background:var(--surface);
+    overflow:hidden;
+}
+
+.utility-content{
+    flex:1;
+    overflow-y:auto;
+    padding:20px;
+}
+
+.utility-content::-webkit-scrollbar{
+    width:8px;
+}
+
+.utility-content::-webkit-scrollbar-thumb{
+    background:#cbd5e1;
+    border-radius:20px;
+}
+
+body.dark .utility-content::-webkit-scrollbar-thumb{
+    background:#475569;
+}
+
+/*=========================================
+  SECTION
+=========================================*/
+
+.utility-section{
+    margin-bottom:28px;
+}
+
+.utility-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:14px;
+}
+
+.utility-title h3{
+    font-size:1rem;
+    font-weight:700;
+    color:var(--text);
+}
+
+.utility-title span{
+    font-size:.82rem;
+    color:var(--muted);
+}
+
+/*=========================================
+  STATISTICS GRID
+=========================================*/
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+}
+
+.stat-card{
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:18px;
+    transition:.25s;
+}
+
+.stat-card:hover{
+    transform:translateY(-3px);
+    box-shadow:var(--shadow-sm);
+}
+
+.stat-title{
+    font-size:.82rem;
+    color:var(--muted);
+    margin-bottom:8px;
+}
+
+.stat-value{
+    font-size:1.5rem;
+    font-weight:700;
+    color:var(--text);
+}
+
+.stat-success .stat-value{color:#16a34a;}
+.stat-danger .stat-value{color:#dc2626;}
+.stat-warning .stat-value{color:#d97706;}
+.stat-info .stat-value{color:#2563eb;}
+
+/*=========================================
+  OVERALL PROGRESS
+=========================================*/
+
+.progress-summary{
+    display:grid;
+    gap:18px;
+}
+
+.progress-item{
+    display:grid;
+    gap:8px;
+}
+
+.progress-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.progress-head span:first-child{
+    color:var(--muted);
+    font-size:.85rem;
+}
+
+.progress-head span:last-child{
+    font-weight:700;
+    color:var(--text);
+}
+
+.progress-line{
+    height:10px;
+    border-radius:30px;
+    overflow:hidden;
+    background:#dbe2ef;
+}
+
+.progress-line-fill{
+    width:0%;
+    height:100%;
+    transition:.35s ease;
+    border-radius:30px;
+}
+
+.progress-answered{
+    background:#16a34a;
+}
+
+.progress-skipped{
+    background:#dc2626;
+}
+
+.progress-review{
+    background:#7c3aed;
+}
+
+.progress-remaining{
+    background:#0ea5e9;
+}
+
+/*=========================================
+  CONNECTION STATUS
+=========================================*/
+
+.connection-card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px;
+    border-radius:14px;
+    border:1px solid var(--border);
+    background:var(--bg);
+}
+
+.connection-info{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+}
+
+.connection-info strong{
+    color:var(--text);
+}
+
+.connection-info span{
+    color:var(--muted);
+    font-size:.82rem;
+}
+
+.connection-dot{
+    width:14px;
+    height:14px;
+    border-radius:50%;
+}
+
+.connection-online{
+    background:#22c55e;
+    box-shadow:0 0 10px rgba(34,197,94,.5);
+}
+
+.connection-offline{
+    background:#ef4444;
+    box-shadow:0 0 10px rgba(239,68,68,.5);
+}
+
+/*=========================================
+  AUTO SAVE
+=========================================*/
+
+.autosave-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px;
+    border-radius:14px;
+    background:var(--bg);
+    border:1px solid var(--border);
+}
+
+.autosave-status{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.autosave-status i{
+    font-size:1.2rem;
+}
+
+.status-saving{
+    color:#d97706;
+}
+
+.status-saved{
+    color:#16a34a;
+}
+
+.autosave-time{
+    font-size:.82rem;
+    color:var(--muted);
+}
+
+/*=========================================
+  WARNING PANEL
+=========================================*/
+
+.warning-box{
+    border-radius:14px;
+    padding:18px;
+    background:#fef2f2;
+    border:1px solid #fecaca;
+}
+
+body.dark .warning-box{
+    background:#3b1a1a;
+    border-color:#7f1d1d;
+}
+
+.warning-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:12px;
+}
+
+.warning-header strong{
+    color:#dc2626;
+}
+
+.warning-counter{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#dc2626;
+    color:#fff;
+    font-weight:700;
+}
+
+.warning-text{
+    font-size:.9rem;
+    color:var(--muted);
+    line-height:1.6;
+}
+
+/*=========================================
+  FULLSCREEN STATUS
+=========================================*/
+
+.fullscreen-status{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px;
+    border-radius:14px;
+    border:1px solid var(--border);
+    background:var(--bg);
+}
+
+.fullscreen-status span{
+    color:var(--muted);
+}
+
+.fullscreen-badge{
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:.8rem;
+    font-weight:700;
+    background:#ede9fe;
+    color:#6d28d9;
+}
+
+/*=========================================
+  EXAM DETAILS
+=========================================*/
+
+.exam-details{
+    display:grid;
+    gap:12px;
+}
+
+.exam-detail{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 14px;
+    border-radius:10px;
+    background:var(--bg);
+    border:1px solid var(--border);
+}
+
+.exam-detail span:first-child{
+    color:var(--muted);
+}
+
+.exam-detail span:last-child{
+    color:var(--text);
+    font-weight:600;
+}
+
+/*=========================================
+  ACTIVITY LOG
+=========================================*/
+
+.activity-log{
+    display:grid;
+    gap:10px;
+}
+
+.activity-item{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    padding:12px;
+    border-radius:10px;
+    background:var(--bg);
+    border:1px solid var(--border);
+}
+
+.activity-dot{
+    width:10px;
+    height:10px;
+    margin-top:6px;
+    border-radius:50%;
+    background:var(--primary);
+}
+
+.activity-content{
+    flex:1;
+}
+
+.activity-content strong{
+    display:block;
+    color:var(--text);
+    margin-bottom:3px;
+}
+
+.activity-content small{
+    color:var(--muted);
+    font-size:.78rem;
+}
+
+/*=========================================
+  HELP CARD
+=========================================*/
+
+.help-card{
+    padding:18px;
+    border-radius:14px;
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
+    color:#fff;
+}
+
+.help-card h4{
+    margin-bottom:10px;
+}
+
+.help-card p{
+    font-size:.88rem;
+    line-height:1.6;
+    opacity:.92;
+}
+
+.help-card button{
+    margin-top:16px;
+    width:100%;
+    height:42px;
+    border-radius:10px;
+    background:#fff;
+    color:#2563eb;
+    font-weight:700;
+    transition:.25s;
+}
+
+.help-card button:hover{
+    transform:translateY(-2px);
+    box-shadow:var(--shadow);
+}
+
+/*=========================================
+  PANEL ANIMATION
+=========================================*/
+
+.utility-section{
+    animation:fadeIn .35s ease;
+}

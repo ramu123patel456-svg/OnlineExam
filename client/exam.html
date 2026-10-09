@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Exam</title>
+<link rel="stylesheet" href="css/exam-live.css">
+</head>
+<body>
+<div class="exam-shell">
+  <header class="topbar">
+    <div class="brand"><div class="crest">✦</div><div><div class="brand-main">ONLINE EXAM SYSTEM</div><div class="brand-sub">HSC / College Examination Portal</div></div></div>
+    <div class="demo-badge">LIVE EXAM</div>
+    <div class="clock-box"><span>Current Time</span><strong id="currentTime">--:--:--</strong></div>
+    <div class="time-box"><span>Time Left</span><strong id="timer">00:00:00</strong></div>
+    <button id="finishTop" class="finish-top" type="button">Finish Exam</button>
+  </header>
+
+  <section class="candidate-bar">
+    <div><b>Student ID:</b> <span id="studentId">—</span></div>
+    <div><b>Student:</b> <span id="student">—</span></div>
+    <div><b>Roll No:</b> <span id="rollNo">—</span></div>
+    <div><b>Exam ID:</b> <span id="examId">—</span></div>
+    <div><b>Subject:</b> <span id="subject">Information Technology</span></div>
+    <div><b>Class:</b> <span id="className">—</span></div>
+  </section>
+
+  <div class="layout">
+    <aside class="status-panel">
+      <div class="panel-title">Question Status</div>
+      <div class="legend"><span><i class="dot current"></i>Current</span><span><i class="dot answered"></i>Answered</span><span><i class="dot pending"></i>Pending</span></div>
+      <div id="statusGrid" class="status-grid"></div>
+      <button id="firstUnanswered" class="secondary-btn" type="button">Next Unanswered</button>
+      <button id="finishSide" class="finish-btn" type="button">Finish Exam</button>
+      <div class="integrity"><b>Exam Integrity</b><span>Stay on this page and do not switch tabs.</span><strong id="violationCount">0 warnings</strong></div>
+    </aside>
+
+    <main class="paper-panel">
+      <div class="paper-head">
+        <div><div class="paper-kicker" id="paperKicker">QUESTION PAPER</div><h1 id="examTitle">Loading exam...</h1></div>
+        <div class="progress-wrap"><span id="progressText">0 / 0</span><div class="progress"><span id="progressBar"></span></div></div>
+      </div>
+      <div id="sectionTabs" class="section-tabs"></div>
+      <div id="questionTabs" class="question-tabs"></div>
+      <div id="message"></div>
+      <form id="examForm" autocomplete="off">
+        <section id="questionCard" class="question-card">Loading questions...</section>
+        <div class="nav-row">
+          <button id="prevBtn" class="nav-btn" type="button">← Previous</button>
+          <button id="saveBtn" class="save-btn" type="button">Save Answer</button>
+          <button id="nextBtn" class="nav-btn primary" type="button">Next →</button>
+        </div>
+      </form>
+    </main>
+  </div>
+</div>
+<script src="js/exam-client.js"></script>
+</body>
+</html>

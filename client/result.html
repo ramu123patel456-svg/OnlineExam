@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exam Result</title>
+<style>
+body{background:#0f172a;color:#f8fafc;font-family:Arial,sans-serif;margin:0}
+.wrap{max-width:900px;margin:40px auto;padding:20px}.card{background:#1e293b;border-radius:16px;padding:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px}.stat{background:#0f172a;padding:18px;border-radius:10px}
+.stat b{font-size:26px;display:block;margin-top:8px}.pass{color:#4ade80}.fail{color:#f87171}
+button{background:#2563eb;color:white;border:0;border-radius:8px;padding:12px 20px;cursor:pointer;margin:5px}
+</style>
+</head>
+<body><div class="wrap"><div id="app" class="card">Loading result...</div></div>
+<script>
+(function(){
+"use strict";
+function safe(v){return String(v??"").replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c];});}
+function show(result){
+ var passed=!!result.passed;
+ document.getElementById("app").innerHTML =
+ '<h1>Exam Result</h1>'+
+ '<p>'+safe(result.student?.name)+' • Roll Number: '+safe(result.student?.rollNumber)+'</p>'+
+ '<h2 class="'+(passed?"pass":"fail")+'">'+(passed?"PASS":"FAIL")+'</h2>'+
+ '<div class="grid">'+
+ '<div class="stat">Score<b>'+safe(result.score)+' / '+safe(result.totalMarks)+'</b></div>'+
+ '<div class="stat">Percentage<b>'+safe(result.percentage)+'%</b></div>'+
+ '<div class="stat">Passing Marks<b>'+safe(result.passingMarks)+'</b></div>'+
+ '<div class="stat">Correct<b>'+safe(result.correct)+'</b></div>'+
+ '<div class="stat">Wrong<b>'+safe(result.wrong)+'</b></div>'+
+ '<div class="stat">Skipped<b>'+safe(result.skipped)+'</b></div>'+
+ '<div class="stat">Submission<b>'+(result.autoSubmitted?"Automatic":"Manual")+'</b></div>'+
+ '<div class="stat">Anti-Cheat Flags<b>'+safe(result.antiCheat?.violationCount||0)+'</b></div>'+
+ '</div><br>'+
+ '<button id="homeBtn">Back to Home</button><button id="leaderBtn">Leaderboard</button><button id="profileBtn">My Profile</button>';
+ document.getElementById("homeBtn").onclick=function(){location.href="index.html";};
+ document.getElementById("leaderBtn").onclick=function(){location.href="leaderboard.html";};
+ document.getElementById("profileBtn").onclick=function(){location.href="profile.html";};
+}
+async function load(){
+ try{
+  var id=new URLSearchParams(location.search).get("id");
+  var cached=null;
+  try{cached=JSON.parse(sessionStorage.getItem("lastResult")||"null");}catch(e){}
+  var result=(cached&&cached.id===id)?cached:null;
+  if(!result&&!id) throw new Error("Missing result ID.");
+  if(!result){
+   var token=sessionStorage.getItem("studentToken"); if(!token) throw new Error("Student login required.");
+   var r=await fetch("/api/results/"+encodeURIComponent(id),{cache:"no-store",headers:{"Authorization":"Bearer "+token}});
+   var d=await r.json();
+   if(!r.ok) throw new Error(d.message||"Result not found.");
+   result=d.result;
+  }
+  show(result);
+ }catch(e){
+  document.getElementById("app").innerHTML='<h2>Result could not be loaded</h2><p>'+safe(e.message)+'</p><button id="loginBtn">Back to Student Login</button>';
+  document.getElementById("loginBtn").onclick=function(){location.href="student-login.html";};
+ }
+}
+load();
+})();
+</script></body></html>

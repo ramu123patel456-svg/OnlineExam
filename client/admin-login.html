@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Login | Board Exam Practice Platform</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#0f172a,#1e3a8a,#312e81);
+overflow:hidden;
+}
+
+.background{
+position:absolute;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:-1;
+}
+
+.circle{
+position:absolute;
+border-radius:50%;
+background:rgba(255,255,255,.08);
+animation:float 12s linear infinite;
+}
+
+.circle:nth-child(1){
+width:250px;
+height:250px;
+top:-50px;
+left:-50px;
+}
+
+.circle:nth-child(2){
+width:180px;
+height:180px;
+bottom:-40px;
+right:60px;
+}
+
+.circle:nth-child(3){
+width:120px;
+height:120px;
+top:50%;
+left:70%;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-25px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+.login-box{
+
+width:430px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(20px);
+
+padding:40px;
+
+border-radius:18px;
+
+border:1px solid rgba(255,255,255,.15);
+
+box-shadow:0 20px 50px rgba(0,0,0,.4);
+
+}
+
+.logo{
+
+text-align:center;
+
+margin-bottom:20px;
+
+font-size:65px;
+
+color:white;
+
+}
+
+h2{
+
+text-align:center;
+
+color:white;
+
+margin-bottom:10px;
+
+}
+
+.subtitle{
+
+text-align:center;
+
+color:#d1d5db;
+
+margin-bottom:30px;
+
+font-size:14px;
+
+}
+
+.input-group{
+
+margin-bottom:18px;
+
+}
+
+.input-group label{
+
+display:block;
+
+color:white;
+
+margin-bottom:8px;
+
+font-size:14px;
+
+}
+
+.input-box{
+
+position:relative;
+
+}
+
+.input-box input{
+
+width:100%;
+
+padding:14px 45px 14px 15px;
+
+border:none;
+
+border-radius:10px;
+
+outline:none;
+
+font-size:15px;
+
+}
+
+.input-box i{
+
+position:absolute;
+
+right:15px;
+
+top:50%;
+
+transform:translateY(-50%);
+
+color:#555;
+
+}
+
+button{
+
+width:100%;
+
+padding:14px;
+
+border:none;
+
+border-radius:10px;
+
+background:#2563eb;
+
+color:white;
+
+font-size:16px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+background:#1d4ed8;
+
+}
+
+.links{
+
+margin-top:18px;
+
+display:flex;
+
+justify-content:space-between;
+
+font-size:14px;
+
+}
+
+.links a{
+
+color:#fff;
+
+text-decoration:none;
+
+}
+
+.error{
+
+margin-top:15px;
+
+text-align:center;
+
+color:#ff8080;
+
+font-size:14px;
+
+}
+
+.loading{
+
+display:none;
+
+margin-top:15px;
+
+text-align:center;
+
+color:white;
+
+}
+
+@media(max-width:500px){
+
+.login-box{
+
+width:92%;
+
+padding:25px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="background">
+
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+
+</div>
+
+<div class="login-box">
+
+<div class="logo">
+
+<i class="fa-solid fa-user-shield"></i>
+
+</div>
+
+<h2>Administrator Login</h2>
+
+<p class="subtitle">
+
+Board Exam Practice Platform
+
+</p>
+
+<form id="loginForm">
+
+<div class="input-group">
+
+<label>Email Address</label>
+
+<div class="input-box">
+
+<input
+type="email"
+id="email"
+placeholder="Enter Email"
+required>
+
+<i class="fa-solid fa-envelope"></i>
+
+</div>
+
+</div>
+
+<div class="input-group">
+
+<label>Password</label>
+
+<div class="input-box">
+
+<input
+type="password"
+id="password"
+placeholder="Enter Password"
+required>
+
+<i
+class="fa-solid fa-eye"
+id="togglePassword"
+style="cursor:pointer"></i>
+
+</div>
+
+</div>
+
+<button type="submit">
+
+<i class="fa-solid fa-right-to-bracket"></i>
+
+Login
+
+</button>
+
+</form>
+
+<div class="loading" id="loading">
+
+Logging in...
+
+</div>
+
+<div class="error" id="error"></div>
+
+<div class="links">
+
+<a href="index.html">
+
+← Home
+
+</a>
+
+<a href="#">
+
+Forgot Password?
+
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+const form=document.getElementById("loginForm");
+
+const password=document.getElementById("password");
+
+const toggle=document.getElementById("togglePassword");
+
+const loading=document.getElementById("loading");
+
+const error=document.getElementById("error");
+
+toggle.onclick=()=>{
+
+if(password.type==="password"){
+
+password.type="text";
+
+toggle.className="fa-solid fa-eye-slash";
+
+}else{
+
+password.type="password";
+
+toggle.className="fa-solid fa-eye";
+
+}
+
+};
+
+form.addEventListener("submit",async(e)=>{
+
+e.preventDefault();
+
+error.innerHTML="";
+
+loading.style.display="block";
+
+const email=document.getElementById("email").value.trim();
+
+const pass=password.value.trim();
+
+if(email===""||pass===""){
+
+loading.style.display="none";
+
+error.innerHTML="Please fill all fields.";
+
+return;
+
+}
+
+try{
+
+const response=await fetch("/api/admin/login",{
+
+method:"POST",
+
+headers:{
+
+"Content-Type":"application/json"
+
+},
+
+body:JSON.stringify({
+
+email,
+
+password:pass
+
+})
+
+});
+
+const data=await response.json();
+
+loading.style.display="none";
+
+if(!response.ok){
+
+error.innerHTML=data.message||"Login Failed";
+
+return;
+
+}
+
+localStorage.setItem("admin",JSON.stringify(data.admin));
+
+localStorage.setItem("adminToken", data.token);
+// Backward compatibility for any older dashboard code.
+localStorage.setItem("adminTokens", data.token);
+localStorage.setItem("adminLoggedIn", "true");
+window.location.replace("admin-control.html");
+
+}catch(err){
+
+loading.style.display="none";
+
+error.innerHTML="Unable to connect to server.";
+
+console.error(err);
+
+}
+
+});
+
+</script>
+
+</body>
+
+</html>

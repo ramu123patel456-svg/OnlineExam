@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: online-exam-system
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: FIREBASE_SERVICE_ACCOUNT_JSON
+        sync: false
+      - key: MIGRATE_JSON_TO_FIRESTORE
+        value: "false"
+      - key: SEED_DEFAULT_EXAM
+        value: "false"
+      - key: SEED_IT_EXAM
+        value: "true"

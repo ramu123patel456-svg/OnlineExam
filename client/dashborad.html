@@ -1,0 +1,2318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Board Exam Practice Platform - Dashboard</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+:root{
+    --primary:#4F46E5;
+    --secondary:#7C3AED;
+    --accent:#38BDF8;
+    --success:#22C55E;
+    --warning:#F59E0B;
+    --danger:#EF4444;
+
+    --bg:#eef2ff;
+    --card:rgba(255,255,255,.72);
+    --glass:rgba(255,255,255,.42);
+    --text:#1f2937;
+    --muted:#64748b;
+    --border:rgba(255,255,255,.45);
+
+    --shadow:0 20px 40px rgba(0,0,0,.08);
+    --radius:18px;
+    --sidebar:290px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#eef2ff,#dbeafe,#ede9fe);
+    color:var(--text);
+    min-height:100vh;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button{
+    font-family:inherit;
+    cursor:pointer;
+}
+
+img{
+    max-width:100%;
+}
+
+.dashboard{
+    display:flex;
+    min-height:100vh;
+}
+
+/*========================
+SIDEBAR
+========================*/
+
+.sidebar{
+    width:var(--sidebar);
+    background:rgba(30,41,59,.88);
+    backdrop-filter:blur(18px);
+    color:#fff;
+    position:fixed;
+    top:0;
+    left:0;
+    height:100vh;
+    overflow:auto;
+    border-right:1px solid rgba(255,255,255,.08);
+    z-index:100;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:28px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo-icon{
+    width:58px;
+    height:58px;
+    border-radius:18px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:25px;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    box-shadow:0 10px 25px rgba(79,70,229,.35);
+}
+
+.logo h2{
+    font-size:20px;
+    line-height:1.3;
+    font-weight:700;
+}
+
+.logo span{
+    display:block;
+    font-size:12px;
+    color:#cbd5e1;
+}
+
+.nav-menu{
+    padding:20px 18px 40px;
+}
+
+.nav-title{
+    color:#94a3b8;
+    font-size:11px;
+    text-transform:uppercase;
+    margin:18px 12px 10px;
+    letter-spacing:2px;
+}
+
+.nav-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:14px 16px;
+    border-radius:15px;
+    margin-bottom:10px;
+    transition:.3s;
+}
+
+.nav-item:hover{
+    background:rgba(255,255,255,.08);
+}
+
+.nav-item.active{
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+}
+
+.nav-item i{
+    width:24px;
+    text-align:center;
+}
+
+/*========================
+MAIN
+========================*/
+
+.main{
+    flex:1;
+    margin-left:var(--sidebar);
+    padding:25px;
+}
+
+/*========================
+TOPBAR
+========================*/
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:var(--glass);
+    backdrop-filter:blur(18px);
+    padding:18px 25px;
+    border-radius:var(--radius);
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+}
+
+.top-left h1{
+    font-size:28px;
+    font-weight:700;
+}
+
+.top-left p{
+    color:var(--muted);
+    margin-top:4px;
+}
+
+.top-right{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.icon-btn{
+    width:46px;
+    height:46px;
+    border:none;
+    border-radius:14px;
+    background:white;
+    color:var(--primary);
+    box-shadow:var(--shadow);
+    font-size:17px;
+}
+
+.profile{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    background:white;
+    padding:8px 14px;
+    border-radius:50px;
+    box-shadow:var(--shadow);
+}
+
+.profile img{
+    width:46px;
+    height:46px;
+    border-radius:50%;
+}
+
+.profile h4{
+    font-size:15px;
+}
+
+.profile small{
+    color:var(--muted);
+}
+
+/*========================
+CARDS
+========================*/
+
+.cards{
+    margin-top:28px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:22px;
+}
+
+.card{
+    background:var(--card);
+    backdrop-filter:blur(18px);
+    border-radius:20px;
+    border:1px solid var(--border);
+    padding:24px;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+}
+
+.card::after{
+    content:"";
+    position:absolute;
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    right:-35px;
+    top:-35px;
+    background:rgba(79,70,229,.08);
+}
+
+.card-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.card-icon{
+    width:58px;
+    height:58px;
+    border-radius:18px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    font-size:22px;
+}
+
+.bg-blue{
+    background:linear-gradient(135deg,#3B82F6,#2563EB);
+}
+
+.bg-purple{
+    background:linear-gradient(135deg,#7C3AED,#9333EA);
+}
+
+.bg-green{
+    background:linear-gradient(135deg,#10B981,#22C55E);
+}
+
+.bg-orange{
+    background:linear-gradient(135deg,#F59E0B,#FB923C);
+}
+
+.card h2{
+    margin-top:18px;
+    font-size:34px;
+}
+
+.card p{
+    margin-top:5px;
+    color:var(--muted);
+    font-size:14px;
+}
+
+.badge{
+    padding:6px 12px;
+    border-radius:50px;
+    font-size:12px;
+    font-weight:600;
+}
+
+.success{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.warning{
+    background:#fef3c7;
+    color:#92400e;
+}
+
+/*========================
+CONTENT
+========================*/
+
+.content-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:24px;
+    margin-top:28px;
+}
+
+.panel{
+    background:var(--card);
+    backdrop-filter:blur(18px);
+    border-radius:20px;
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+    padding:24px;
+}
+
+.panel-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.panel-title h3{
+    font-size:20px;
+}
+
+.primary-btn{
+    border:none;
+    padding:12px 18px;
+    border-radius:12px;
+    color:white;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    font-weight:600;
+}
+
+.secondary-btn{
+    border:none;
+    padding:12px 18px;
+    border-radius:12px;
+    background:#fff;
+    color:var(--primary);
+    font-weight:600;
+    box-shadow:var(--shadow);
+}
+
+@media(max-width:1200px){
+
+.content-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:900px){
+
+.sidebar{
+transform:translateX(-100%);
+transition:.3s;
+}
+
+.sidebar.show{
+transform:translateX(0);
+}
+
+.main{
+margin-left:0;
+}
+
+.topbar{
+flex-wrap:wrap;
+gap:15px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+<a href="admin-control.html" style="position:fixed;right:20px;top:20px;z-index:9999;padding:10px 14px;background:#4F46E5;color:#fff;border-radius:10px;text-decoration:none">Open Admin Control</a>
+
+<div class="dashboard">
+
+<aside class="sidebar">
+
+<div class="logo">
+<div class="logo-icon">
+<i class="fas fa-graduation-cap"></i>
+</div>
+
+<div>
+<h2>Exam Board</h2>
+<span>Admin Dashboard</span>
+</div>
+</div>
+
+<div class="nav-menu">
+
+<div class="nav-title">Main</div>
+
+<a href="#" class="nav-item active">
+<i class="fas fa-chart-pie"></i>
+<span>Dashboard</span>
+</a>
+
+<a href="#" class="nav-item">
+<i class="fas fa-file-alt"></i>
+<span>Exams</span>
+</a>
+
+<a href="#" class="nav-item">
+<i class="fas fa-user-graduate"></i>
+<span>Students</span>
+</a>
+
+<a href="#" class="nav-item">
+<i class="fas fa-book"></i>
+<span>Subjects</span>
+</a>
+
+<a href="#" class="nav-item">
+<i class="fas fa-layer-group"></i>
+<span>Question Bank</span>
+</a>
+
+<div class="nav-title">Management</div>
+
+<a href="#" class="nav-item">
+<i class="fas fa-chart-line"></i>
+<span>Analytics</span>
+</a>
+
+<a href="#" class="nav-item">
+<i class="fas fa-bell"></i>
+<span>Notifications</span>
+</a>
+
+<a href="#" class="nav-item">
+<i class="fas fa-cog"></i>
+<span>Settings</span>
+</a>
+
+<a href="#" class="nav-item">
+<i class="fas fa-right-from-bracket"></i>
+<span>Logout</span>
+</a>
+
+</div>
+
+</aside>
+
+<main class="main">
+
+<header class="topbar">
+
+<div class="top-left">
+<h1>Dashboard</h1>
+<p>Welcome back, Administrator.</p>
+</div>
+
+<div class="top-right">
+
+<button class="icon-btn">
+<i class="fas fa-bars"></i>
+</button>
+
+<button class="icon-btn">
+<i class="fas fa-bell"></i>
+</button>
+
+<button class="icon-btn">
+<i class="fas fa-moon"></i>
+</button>
+
+<div class="profile">
+
+<img src="https://i.pravatar.cc/100?img=12">
+
+<div>
+<h4>Admin</h4>
+<small>System Administrator</small>
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<section class="cards">
+
+<div class="card">
+
+<div class="card-header">
+
+<div class="card-icon bg-blue">
+<i class="fas fa-file-alt"></i>
+</div>
+
+<span class="badge success">+12%</span>
+
+</div>
+
+<h2>145</h2>
+
+<p>Total Exams</p>
+
+</div>
+
+<div class="card">
+
+<div class="card-header">
+
+<div class="card-icon bg-purple">
+<i class="fas fa-users"></i>
+</div>
+
+<span class="badge success">+18%</span>
+
+</div>
+
+<h2>8,521</h2>
+
+<p>Students</p>
+
+</div>
+
+<div class="card">
+
+<div class="card-header">
+
+<div class="card-icon bg-green">
+<i class="fas fa-check-circle"></i>
+</div>
+
+<span class="badge success">94%</span>
+
+</div>
+
+<h2>7,982</h2>
+
+<p>Completed Exams</p>
+
+</div>
+
+<div class="card">
+
+<div class="card-header">
+
+<div class="card-icon bg-orange">
+<i class="fas fa-clock"></i>
+</div>
+
+<span class="badge warning">Today</span>
+
+</div>
+
+<h2>52</h2>
+
+<p>Pending Reviews</p>
+
+</div>
+
+</section>
+
+<section class="content-grid">
+
+<div class="panel">
+
+<div class="panel-title">
+
+<h3>Exam Management</h3>
+
+<button class="primary-btn">
+<i class="fas fa-plus"></i>
+Create Exam
+</button>
+
+</div>
+
+<!-- END OF PART 1 -->
+
+<!-- END OF PART 1 -->
+
+<div class="exam-toolbar">
+
+    <div class="toolbar-left">
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input
+                type="text"
+                id="searchExam"
+                placeholder="Search exam by name, subject or class...">
+        </div>
+
+        <select id="filterExam">
+            <option value="all">All Status</option>
+            <option value="Published">Published</option>
+            <option value="Draft">Draft</option>
+        </select>
+    </div>
+
+    <div class="toolbar-right">
+        <button class="primary-btn" id="createExamBtn">
+            <i class="fas fa-plus-circle"></i>
+            Create Exam
+        </button>
+    </div>
+
+</div>
+
+<div class="table-container">
+
+<table class="exam-table" id="examTable">
+
+<thead>
+
+<tr>
+    <th>ID</th>
+    <th>Exam Name</th>
+    <th>Subject</th>
+    <th>Class</th>
+    <th>Questions</th>
+    <th>Duration</th>
+    <th>Status</th>
+    <th>Actions</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr data-status="Published">
+    <td>#101</td>
+    <td>Physics Unit Test</td>
+    <td>Physics</td>
+    <td>12th</td>
+    <td>50</td>
+    <td>60 Min</td>
+    <td>
+        <span class="badge success">Published</span>
+    </td>
+    <td>
+        <button class="secondary-btn edit-btn">
+            <i class="fas fa-edit"></i>
+        </button>
+
+        <button class="primary-btn publish-btn">
+            Publish
+        </button>
+
+        <button class="secondary-btn draft-btn">
+            Draft
+        </button>
+
+        <button class="secondary-btn delete-btn">
+            <i class="fas fa-trash"></i>
+        </button>
+    </td>
+</tr>
+
+<tr data-status="Draft">
+    <td>#102</td>
+    <td>Chemistry Mock Test</td>
+    <td>Chemistry</td>
+    <td>12th</td>
+    <td>40</td>
+    <td>45 Min</td>
+    <td>
+        <span class="badge warning">Draft</span>
+    </td>
+    <td>
+        <button class="secondary-btn edit-btn">
+            <i class="fas fa-edit"></i>
+        </button>
+
+        <button class="primary-btn publish-btn">
+            Publish
+        </button>
+
+        <button class="secondary-btn draft-btn">
+            Draft
+        </button>
+
+        <button class="secondary-btn delete-btn">
+            <i class="fas fa-trash"></i>
+        </button>
+    </td>
+</tr>
+
+<tr data-status="Published">
+    <td>#103</td>
+    <td>Biology Final Practice</td>
+    <td>Biology</td>
+    <td>12th</td>
+    <td>60</td>
+    <td>90 Min</td>
+    <td>
+        <span class="badge success">Published</span>
+    </td>
+    <td>
+        <button class="secondary-btn edit-btn">
+            <i class="fas fa-edit"></i>
+        </button>
+
+        <button class="primary-btn publish-btn">
+            Publish
+        </button>
+
+        <button class="secondary-btn draft-btn">
+            Draft
+        </button>
+
+        <button class="secondary-btn delete-btn">
+            <i class="fas fa-trash"></i>
+        </button>
+    </td>
+</tr>
+
+<tr data-status="Draft">
+    <td>#104</td>
+    <td>Mathematics Weekly Test</td>
+    <td>Mathematics</td>
+    <td>11th</td>
+    <td>35</td>
+    <td>45 Min</td>
+    <td>
+        <span class="badge warning">Draft</span>
+    </td>
+    <td>
+        <button class="secondary-btn edit-btn">
+            <i class="fas fa-edit"></i>
+        </button>
+
+        <button class="primary-btn publish-btn">
+            Publish
+        </button>
+
+        <button class="secondary-btn draft-btn">
+            Draft
+        </button>
+
+        <button class="secondary-btn delete-btn">
+            <i class="fas fa-trash"></i>
+        </button>
+    </td>
+</tr>
+
+<tr data-status="Published">
+    <td>#105</td>
+    <td>English Grammar Test</td>
+    <td>English</td>
+    <td>10th</td>
+    <td>30</td>
+    <td>40 Min</td>
+    <td>
+        <span class="badge success">Published</span>
+    </td>
+    <td>
+        <button class="secondary-btn edit-btn">
+            <i class="fas fa-edit"></i>
+        </button>
+
+        <button class="primary-btn publish-btn">
+            Publish
+        </button>
+
+        <button class="secondary-btn draft-btn">
+            Draft
+        </button>
+
+        <button class="secondary-btn delete-btn">
+            <i class="fas fa-trash"></i>
+        </button>
+    </td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="panel">
+
+<div class="panel-title">
+<h3>Student Statistics</h3>
+</div>
+
+<div class="cards stats-cards">
+
+<div class="card">
+
+<div class="card-header">
+
+<div class="card-icon bg-blue">
+<i class="fas fa-user-check"></i>
+</div>
+
+</div>
+
+<h2>7,842</h2>
+
+<p>Active Students</p>
+
+</div>
+
+<div class="card">
+
+<div class="card-header">
+
+<div class="card-icon bg-green">
+<i class="fas fa-award"></i>
+</div>
+
+</div>
+
+<h2>91%</h2>
+
+<p>Average Score</p>
+
+</div>
+
+<div class="card">
+
+<div class="card-header">
+
+<div class="card-icon bg-purple">
+<i class="fas fa-book-open"></i>
+</div>
+
+</div>
+
+<h2>18</h2>
+
+<p>Subjects</p>
+
+</div>
+
+</div>
+
+<div class="panel-title" style="margin-top:30px;">
+<h3>Progress Cards</h3>
+</div>
+
+<div class="progress-wrapper">
+
+<div class="progress-item">
+<div class="progress-header">
+<span>Physics</span>
+<span>92%</span>
+</div>
+
+<progress value="92" max="100"></progress>
+</div>
+
+<div class="progress-item">
+<div class="progress-header">
+<span>Chemistry</span>
+<span>84%</span>
+</div>
+
+<progress value="84" max="100"></progress>
+</div>
+
+<div class="progress-item">
+<div class="progress-header">
+<span>Mathematics</span>
+<span>88%</span>
+</div>
+
+<progress value="88" max="100"></progress>
+</div>
+
+<div class="progress-item">
+<div class="progress-header">
+<span>Biology</span>
+<span>76%</span>
+</div>
+
+<progress value="76" max="100"></progress>
+</div>
+
+<div class="progress-item">
+<div class="progress-header">
+<span>English</span>
+<span>95%</span>
+</div>
+
+<progress value="95" max="100"></progress>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- END OF PART 2 -->
+
+<!-- END OF PART 2 -->
+
+<!-- =========================
+CREATE EXAM MODAL
+========================= -->
+
+<div class="modal-overlay" id="createExamModal">
+
+    <div class="modal glass-modal">
+
+        <div class="modal-header">
+            <h2>Create New Exam</h2>
+
+            <button class="close-modal" data-close="createExamModal">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <form id="createExamForm">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>Exam Title</label>
+                    <input type="text" id="examTitle" placeholder="Enter exam title" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Subject</label>
+                    <select id="examSubject">
+                        <option>Physics</option>
+                        <option>Chemistry</option>
+                        <option>Mathematics</option>
+                        <option>Biology</option>
+                        <option>English</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Class</label>
+                    <select id="examClass">
+                        <option>10th</option>
+                        <option>11th</option>
+                        <option selected>12th</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Total Questions</label>
+                    <input type="number" min="1" value="50">
+                </div>
+
+                <div class="form-group">
+                    <label>Duration (Minutes)</label>
+                    <input type="number" min="1" value="60">
+                </div>
+
+                <div class="form-group">
+                    <label>Total Marks</label>
+                    <input type="number" min="1" value="100">
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Question Paper PDF</label>
+                    <div style="display:grid;gap:10px;padding:16px;border:1px dashed rgba(79,70,229,.5);border-radius:12px;background:rgba(79,70,229,.06)">
+                        <input type="file" id="questionPaperPdf" accept="application/pdf,.pdf">
+                        <small style="color:#64748b">Upload a selectable-text PDF containing MCQs and an answer key. Example: <b>1-B, 2-C, 3-A...</b></small>
+                        <button type="button" class="secondary-btn" id="importPdfBtn"><i class="fas fa-file-pdf"></i> Import PDF & Create Exam</button>
+                        <div id="pdfImportStatus" style="font-size:13px"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="secondary-btn" data-close="createExamModal">
+                    Cancel
+                </button>
+
+                <button type="submit" class="primary-btn">
+                    <i class="fas fa-plus-circle"></i>
+                    Create Exam
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- =========================
+EDIT EXAM MODAL
+========================= -->
+
+<div class="modal-overlay" id="editExamModal">
+
+    <div class="modal glass-modal">
+
+        <div class="modal-header">
+
+            <h2>Edit Exam</h2>
+
+            <button class="close-modal" data-close="editExamModal">
+                <i class="fas fa-times"></i>
+            </button>
+
+        </div>
+
+        <form id="editExamForm">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>Exam Name</label>
+                    <input type="text" value="Physics Unit Test">
+                </div>
+
+                <div class="form-group">
+                    <label>Subject</label>
+                    <select>
+                        <option selected>Physics</option>
+                        <option>Chemistry</option>
+                        <option>Biology</option>
+                        <option>Mathematics</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Class</label>
+                    <select>
+                        <option>10th</option>
+                        <option>11th</option>
+                        <option selected>12th</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Questions</label>
+                    <input type="number" value="50">
+                </div>
+
+                <div class="form-group">
+                    <label>Duration</label>
+                    <input type="number" value="60">
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Description</label>
+                    <textarea rows="4">Physics Board Examination Practice Test</textarea>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button" class="secondary-btn" data-close="editExamModal">
+                    Cancel
+                </button>
+
+                <button class="primary-btn" type="submit">
+                    Save Changes
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- =========================
+STUDENT LIST
+========================= -->
+
+<section class="content-grid">
+
+    <div class="panel">
+
+        <div class="panel-title">
+            <h3>Student List</h3>
+
+            <button class="secondary-btn">
+                <i class="fas fa-download"></i>
+                Export
+            </button>
+        </div>
+
+        <table class="exam-table">
+
+            <thead>
+                <tr>
+                    <th>Student</th>
+                    <th>Class</th>
+                    <th>Subject</th>
+                    <th>Score</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Rahul Sharma</td>
+                    <td>12th</td>
+                    <td>Physics</td>
+                    <td>94%</td>
+                    <td><span class="badge success">Passed</span></td>
+                </tr>
+
+                <tr>
+                    <td>Priya Singh</td>
+                    <td>12th</td>
+                    <td>Chemistry</td>
+                    <td>91%</td>
+                    <td><span class="badge success">Passed</span></td>
+                </tr>
+
+                <tr>
+                    <td>Aman Verma</td>
+                    <td>11th</td>
+                    <td>Mathematics</td>
+                    <td>88%</td>
+                    <td><span class="badge success">Passed</span></td>
+                </tr>
+
+                <tr>
+                    <td>Neha Patil</td>
+                    <td>12th</td>
+                    <td>Biology</td>
+                    <td>79%</td>
+                    <td><span class="badge warning">Average</span></td>
+                </tr>
+
+                <tr>
+                    <td>Rohit Kumar</td>
+                    <td>10th</td>
+                    <td>English</td>
+                    <td>96%</td>
+                    <td><span class="badge success">Passed</span></td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- =========================
+    RIGHT SIDEBAR
+    ========================= -->
+
+    <div class="panel">
+
+        <div class="panel-title">
+            <h3>Recent Activity</h3>
+        </div>
+
+        <div class="activity-list">
+
+            <div class="activity-item">
+                <i class="fas fa-plus-circle"></i>
+                <div>
+                    <strong>Physics Mock Test</strong>
+                    <p>New exam created.</p>
+                    <small>5 Minutes Ago</small>
+                </div>
+            </div>
+
+            <div class="activity-item">
+                <i class="fas fa-user-check"></i>
+                <div>
+                    <strong>120 Students</strong>
+                    <p>Completed Chemistry Test.</p>
+                    <small>18 Minutes Ago</small>
+                </div>
+            </div>
+
+            <div class="activity-item">
+                <i class="fas fa-edit"></i>
+                <div>
+                    <strong>Exam Updated</strong>
+                    <p>Biology Final Test edited.</p>
+                    <small>45 Minutes Ago</small>
+                </div>
+            </div>
+
+            <div class="activity-item">
+                <i class="fas fa-trash"></i>
+                <div>
+                    <strong>Draft Deleted</strong>
+                    <p>Old Mathematics Test removed.</p>
+                    <small>Today</small>
+                </div>
+            </div>
+
+        </div>
+
+        <hr style="margin:25px 0;opacity:.15;">
+
+        <!-- =========================
+        NOTIFICATIONS PANEL
+        ========================= -->
+
+        <div class="panel-title">
+            <h3>Notifications</h3>
+        </div>
+
+        <div class="notification-list">
+
+            <div class="notification-item">
+                <i class="fas fa-bell"></i>
+                <div>
+                    <strong>Server Backup Completed</strong>
+                    <p>Database backup finished successfully.</p>
+                </div>
+            </div>
+
+            <div class="notification-item">
+                <i class="fas fa-user-graduate"></i>
+                <div>
+                    <strong>56 New Registrations</strong>
+                    <p>Students joined today.</p>
+                </div>
+            </div>
+
+            <div class="notification-item">
+                <i class="fas fa-chart-line"></i>
+                <div>
+                    <strong>Performance Increased</strong>
+                    <p>Average score improved by 6%.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <hr style="margin:25px 0;opacity:.15;">
+
+        <!-- =========================
+        SETTINGS PANEL
+        ========================= -->
+
+        <div class="panel-title">
+            <h3>Quick Settings</h3>
+        </div>
+
+        <div class="settings-list">
+
+            <label class="setting-item">
+                <span>Email Notifications</span>
+                <input type="checkbox" checked>
+            </label>
+
+            <label class="setting-item">
+                <span>Auto Publish Exams</span>
+                <input type="checkbox">
+            </label>
+
+            <label class="setting-item">
+                <span>Student Leaderboard</span>
+                <input type="checkbox" checked>
+            </label>
+
+            <label class="setting-item">
+                <span>Maintenance Mode</span>
+                <input type="checkbox">
+            </label>
+
+            <label class="setting-item">
+                <span>Dark Mode</span>
+                <input type="checkbox" id="darkModeToggle">
+            </label>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- END OF PART 3 -->
+
+<!-- END OF PART 3 -->
+
+<!-- =========================
+CHART.JS DASHBOARD
+========================= -->
+
+<section class="content-grid">
+
+    <div class="panel">
+
+        <div class="panel-title">
+            <h3>Exam Performance Analytics</h3>
+        </div>
+
+        <canvas id="performanceChart" height="120"></canvas>
+
+    </div>
+
+    <div class="panel">
+
+        <div class="panel-title">
+            <h3>Subject Distribution</h3>
+        </div>
+
+        <canvas id="subjectChart" height="260"></canvas>
+
+    </div>
+
+</section>
+
+<section class="content-grid">
+
+    <div class="panel">
+
+        <div class="panel-title">
+            <h3>Monthly Dashboard Statistics</h3>
+        </div>
+
+        <canvas id="statisticsChart" height="120"></canvas>
+
+    </div>
+
+    <div class="panel">
+
+        <div class="panel-title">
+            <h3>Live Summary</h3>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon bg-blue">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                </div>
+
+                <h2 id="liveStudents">8521</h2>
+                <p>Registered Students</p>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon bg-green">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div>
+
+                <h2 id="liveCompleted">7982</h2>
+                <p>Completed Exams</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+JAVASCRIPT
+========================= -->
+
+<script>
+
+/*=========================
+DUMMY DATA
+=========================*/
+
+const dashboardData = {
+
+    exams:145,
+
+    students:8521,
+
+    completed:7982,
+
+    averageScore:91,
+
+    monthlyScores:[
+        65,
+        70,
+        75,
+        82,
+        88,
+        90,
+        92
+    ],
+
+    monthlyLabels:[
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul"
+    ]
+
+};
+
+/*=========================
+PERFORMANCE CHART
+=========================*/
+
+const performanceChart = new Chart(
+document.getElementById("performanceChart"),
+{
+    type:"line",
+
+    data:{
+
+        labels:dashboardData.monthlyLabels,
+
+        datasets:[{
+
+            label:"Average Score",
+
+            data:dashboardData.monthlyScores,
+
+            borderColor:"#4F46E5",
+
+            backgroundColor:"rgba(79,70,229,.15)",
+
+            fill:true,
+
+            tension:.4,
+
+            borderWidth:3,
+
+            pointRadius:5
+
+        }]
+
+    },
+
+    options:{
+
+        responsive:true,
+
+        maintainAspectRatio:true,
+
+        plugins:{
+            legend:{
+                display:true
+            }
+        },
+
+        scales:{
+            y:{
+                beginAtZero:true,
+                max:100
+            }
+        }
+
+    }
+
+});
+
+/*=========================
+SUBJECT CHART
+=========================*/
+
+const subjectChart = new Chart(
+document.getElementById("subjectChart"),
+{
+
+    type:"doughnut",
+
+    data:{
+
+        labels:[
+            "Physics",
+            "Chemistry",
+            "Biology",
+            "Maths",
+            "English"
+        ],
+
+        datasets:[{
+
+            data:[
+                28,
+                20,
+                16,
+                22,
+                14
+            ],
+
+            backgroundColor:[
+                "#4F46E5",
+                "#7C3AED",
+                "#22C55E",
+                "#F59E0B",
+                "#38BDF8"
+            ]
+
+        }]
+
+    },
+
+    options:{
+        responsive:true,
+        plugins:{
+            legend:{
+                position:"bottom"
+            }
+        }
+    }
+
+});
+
+/*=========================
+BAR CHART
+=========================*/
+
+const statisticsChart = new Chart(
+document.getElementById("statisticsChart"),
+{
+
+    type:"bar",
+
+    data:{
+
+        labels:[
+            "Physics",
+            "Chemistry",
+            "Maths",
+            "Biology",
+            "English"
+        ],
+
+        datasets:[{
+
+            label:"Students",
+
+            data:[
+                1800,
+                1650,
+                2100,
+                1450,
+                1521
+            ],
+
+            backgroundColor:[
+                "#4F46E5",
+                "#7C3AED",
+                "#22C55E",
+                "#F59E0B",
+                "#38BDF8"
+            ]
+
+        }]
+
+    },
+
+    options:{
+
+        responsive:true,
+
+        plugins:{
+            legend:{
+                display:false
+            }
+        }
+
+    }
+
+});
+
+/*=========================
+LIVE DASHBOARD
+=========================*/
+
+setInterval(()=>{
+
+    const students=document.getElementById("liveStudents");
+    const completed=document.getElementById("liveCompleted");
+
+    dashboardData.students+=Math.floor(Math.random()*3);
+
+    dashboardData.completed+=Math.floor(Math.random()*2);
+
+    students.textContent=dashboardData.students;
+
+    completed.textContent=dashboardData.completed;
+
+},5000);
+
+/*=========================
+MODAL LOGIC
+=========================*/
+
+const createExamBtn=document.getElementById("createExamBtn");
+
+const createExamModal=document.getElementById("createExamModal");
+
+const editExamModal=document.getElementById("editExamModal");
+
+if(createExamBtn){
+
+    createExamBtn.addEventListener("click",()=>{
+
+        createExamModal.classList.add("show");
+
+    });
+
+}
+
+document.querySelectorAll("[data-close]").forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        const modal=document.getElementById(button.dataset.close);
+
+        if(modal){
+
+            modal.classList.remove("show");
+
+        }
+
+    });
+
+});
+
+document.querySelectorAll(".edit-btn").forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        editExamModal.classList.add("show");
+
+    });
+
+});
+
+window.addEventListener("click",(e)=>{
+
+    if(e.target.classList.contains("modal-overlay")){
+
+        e.target.classList.remove("show");
+
+    }
+
+});
+
+/*=========================
+SEARCH LOGIC
+=========================*/
+
+const searchInput=document.getElementById("searchExam");
+
+if(searchInput){
+
+searchInput.addEventListener("keyup",function(){
+
+    const value=this.value.toLowerCase();
+
+    document.querySelectorAll("#examTable tbody tr").forEach(row=>{
+
+        row.style.display=row.innerText.toLowerCase().includes(value)
+            ? ""
+            : "none";
+
+    });
+
+});
+
+}
+
+/*=========================
+FILTER LOGIC
+=========================*/
+
+const filter=document.getElementById("filterExam");
+
+if(filter){
+
+filter.addEventListener("change",function(){
+
+    const selected=this.value;
+
+    document.querySelectorAll("#examTable tbody tr").forEach(row=>{
+
+        if(selected==="all"){
+
+            row.style.display="";
+
+            return;
+
+        }
+
+        row.style.display=
+        row.dataset.status===selected
+        ? ""
+        : "none";
+
+    });
+
+});
+
+}
+
+/*=========================
+TABLE EVENTS
+=========================*/
+
+document.querySelectorAll(".publish-btn").forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+    const row=button.closest("tr");
+
+    row.dataset.status="Published";
+
+    row.querySelector("td:nth-child(7)").innerHTML=
+    '<span class="badge success">Published</span>';
+
+});
+
+});
+
+document.querySelectorAll(".draft-btn").forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+    const row=button.closest("tr");
+
+    row.dataset.status="Draft";
+
+    row.querySelector("td:nth-child(7)").innerHTML=
+    '<span class="badge warning">Draft</span>';
+
+});
+
+});
+
+document.querySelectorAll(".delete-btn").forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+    if(confirm("Delete this exam?")){
+
+        button.closest("tr").remove();
+
+    }
+
+});
+
+});
+
+/*=========================
+FORM EVENTS
+=========================*/
+
+document.getElementById("createExamForm").addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    createExamModal.classList.remove("show");
+
+});
+
+document.getElementById("editExamForm").addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    editExamModal.classList.remove("show");
+
+});
+
+</script>
+
+<!-- END OF PART 4 -->
+
+<!-- END OF PART 4 -->
+
+<!-- =========================
+DARK MODE
+========================= -->
+
+<div id="loadingOverlay" class="loading-overlay">
+    <div class="loader-box">
+        <div class="loader"></div>
+        <p>Loading Dashboard...</p>
+    </div>
+</div>
+
+<div id="toastContainer" class="toast-container"></div>
+
+<script>
+
+/* =========================
+LOADING OVERLAY
+========================= */
+
+window.addEventListener("load", () => {
+
+    const overlay = document.getElementById("loadingOverlay");
+
+    if (overlay) {
+
+        setTimeout(() => {
+
+            overlay.style.opacity = "0";
+
+            setTimeout(() => {
+
+                overlay.style.display = "none";
+
+            }, 500);
+
+        }, 700);
+
+    }
+
+});
+
+
+/* =========================
+TOAST NOTIFICATION
+========================= */
+
+function showToast(message, type = "success") {
+
+    const container = document.getElementById("toastContainer");
+
+    const toast = document.createElement("div");
+
+    toast.className = `toast ${type}`;
+
+    toast.innerHTML = `
+        <i class="fas ${
+            type === "success"
+                ? "fa-circle-check"
+                : type === "error"
+                ? "fa-circle-xmark"
+                : "fa-circle-info"
+        }"></i>
+        <span>${message}</span>
+    `;
+
+    container.appendChild(toast);
+
+    setTimeout(() => {
+
+        toast.classList.add("show");
+
+    }, 100);
+
+    setTimeout(() => {
+
+        toast.classList.remove("show");
+
+        setTimeout(() => {
+
+            toast.remove();
+
+        }, 400);
+
+    }, 3000);
+
+}
+
+
+/* =========================
+DARK MODE
+========================= */
+
+const darkToggle =
+    document.getElementById("darkModeToggle");
+
+function enableDarkMode() {
+
+    document.body.classList.add("dark-mode");
+
+    localStorage.setItem("dashboard-theme", "dark");
+
+}
+
+function disableDarkMode() {
+
+    document.body.classList.remove("dark-mode");
+
+    localStorage.setItem("dashboard-theme", "light");
+
+}
+
+if (localStorage.getItem("dashboard-theme") === "dark") {
+
+    enableDarkMode();
+
+    if (darkToggle) darkToggle.checked = true;
+
+}
+
+if (darkToggle) {
+
+    darkToggle.addEventListener("change", function () {
+
+        if (this.checked) {
+
+            enableDarkMode();
+
+            showToast("Dark Mode Enabled");
+
+        } else {
+
+            disableDarkMode();
+
+            showToast("Light Mode Enabled", "info");
+
+        }
+
+    });
+
+}
+
+
+/* =========================
+MOBILE SIDEBAR
+========================= */
+
+const sidebar = document.querySelector(".sidebar");
+
+const menuButton = document.querySelector(".fa-bars")?.parentElement;
+
+if (menuButton) {
+
+    menuButton.addEventListener("click", () => {
+
+        sidebar.classList.toggle("show");
+
+    });
+
+}
+
+document.addEventListener("click", (e) => {
+
+    if (
+        window.innerWidth < 900 &&
+        sidebar &&
+        !sidebar.contains(e.target) &&
+        !menuButton.contains(e.target)
+    ) {
+
+        sidebar.classList.remove("show");
+
+    }
+
+});
+
+
+/* =========================
+LOGOUT
+========================= */
+
+document.querySelectorAll(".nav-item").forEach(item => {
+
+    if (
+        item.textContent.trim().toLowerCase() === "logout"
+    ) {
+
+        item.addEventListener("click", function (e) {
+
+            e.preventDefault();
+
+            if (confirm("Are you sure you want to logout?")) {
+
+                showToast("Logged out successfully.");
+
+                setTimeout(() => {
+
+                    window.location.href = "login.html";
+
+                }, 1200);
+
+            }
+
+        });
+
+    }
+
+});
+
+
+/* =========================
+GLOBAL EVENTS
+========================= */
+
+document.querySelectorAll(".publish-btn").forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        showToast("Exam Published Successfully");
+
+    });
+
+});
+
+document.querySelectorAll(".draft-btn").forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        showToast("Saved as Draft", "info");
+
+    });
+
+});
+
+document.querySelectorAll(".delete-btn").forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        showToast("Exam Deleted", "error");
+
+    });
+
+});
+
+document
+.getElementById("createExamForm")
+?.addEventListener("submit", () => {
+
+    showToast("Exam Created Successfully");
+
+});
+
+document
+.getElementById("editExamForm")
+?.addEventListener("submit", () => {
+
+    showToast("Exam Updated Successfully");
+
+});
+
+</script>
+
+<style>
+
+/* =========================
+DARK MODE
+========================= */
+
+body.dark-mode{
+
+    background:#0f172a;
+    color:#f8fafc;
+
+}
+
+body.dark-mode .panel,
+body.dark-mode .card,
+body.dark-mode .topbar{
+
+    background:rgba(30,41,59,.95);
+    color:white;
+    border-color:rgba(255,255,255,.08);
+
+}
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select{
+
+    background:#1e293b;
+    color:white;
+    border:1px solid #334155;
+
+}
+
+body.dark-mode table{
+
+    color:white;
+
+}
+
+body.dark-mode .sidebar{
+
+    background:#020617;
+
+}
+
+/* =========================
+TOAST
+========================= */
+
+.toast-container{
+
+    position:fixed;
+
+    top:25px;
+
+    right:25px;
+
+    z-index:5000;
+
+}
+
+.toast{
+
+    min-width:270px;
+
+    margin-bottom:12px;
+
+    background:white;
+
+    color:#111827;
+
+    border-radius:12px;
+
+    padding:14px 18px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+    transform:translateX(350px);
+
+    transition:.35s;
+
+}
+
+.toast.show{
+
+    transform:translateX(0);
+
+}
+
+.toast.success i{
+
+    color:#22c55e;
+
+}
+
+.toast.error i{
+
+    color:#ef4444;
+
+}
+
+.toast.info i{
+
+    color:#3b82f6;
+
+}
+
+/* =========================
+LOADER
+========================= */
+
+.loading-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#eef2ff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+    transition:.5s;
+
+}
+
+.loader-box{
+
+    text-align:center;
+
+}
+
+.loader{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    border:6px solid #dbeafe;
+
+    border-top-color:#4f46e5;
+
+    animation:spin 1s linear infinite;
+
+    margin:auto;
+
+}
+
+.loader-box p{
+
+    margin-top:20px;
+
+    font-weight:600;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .toast{
+
+        min-width:220px;
+
+    }
+
+}
+
+</style>
+
+</main>
+
+</div>
+
+
+<script>
+(() => {
+  const importBtn = document.getElementById('importPdfBtn');
+  const fileInput = document.getElementById('questionPaperPdf');
+  const status = document.getElementById('pdfImportStatus');
+  if (!importBtn || !fileInput) return;
+  importBtn.addEventListener('click', async () => {
+    const file = fileInput.files?.[0];
+    if (!file) { status.textContent = 'Please choose a PDF first.'; return; }
+    if (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) { status.textContent = 'Only PDF files are supported.'; return; }
+    const token = localStorage.getItem('adminToken');
+    if (!token) { status.textContent = 'Admin session not found. Please login again.'; return; }
+    importBtn.disabled = true;
+    status.textContent = 'Reading PDF and creating exam...';
+    try {
+      const meta = {
+        title: document.getElementById('examTitle')?.value || file.name.replace(/\.pdf$/i,'') || 'PDF Imported Exam',
+        subject: document.getElementById('examSubject')?.value || 'General',
+        className: document.getElementById('examClass')?.value || '12th',
+        durationMinutes: Number(document.querySelector('#createExamModal input[type="number"]')?.value) || 60
+      };
+      const response = await fetch('/api/admin/exams/from-pdf', {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/pdf', 'X-Exam-Meta': JSON.stringify(meta) },
+        body: await file.arrayBuffer()
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.message || 'PDF import failed.');
+      status.innerHTML = `<span style="color:#16a34a">✓ ${data.message}</span>`;
+      if (typeof showToast === 'function') showToast(data.message, 'info');
+      fileInput.value = '';
+    } catch (error) {
+      status.innerHTML = `<span style="color:#dc2626">${String(error.message || error)}</span>`;
+    } finally {
+      importBtn.disabled = false;
+    }
+  });
+})();
+</script>
+</body>
+</html>
+
+<!-- COMPLETE -->

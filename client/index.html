@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Board Exam Practice Platform</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#0b1020;color:#fff}
+header{position:sticky;top:0;background:rgba(15,20,40,.9);padding:16px;display:flex;justify-content:space-between}
+nav a{color:#fff;margin:0 10px;text-decoration:none}
+.hero{padding:80px 20px;text-align:center;background:linear-gradient(135deg,#2563eb,#7c3aed)}
+.btn{padding:12px 20px;border-radius:10px;background:#fff;color:#111;text-decoration:none;margin:8px;display:inline-block}
+section{padding:60px 20px;max-width:1100px;margin:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:#18203d;padding:20px;border-radius:16px}
+footer{padding:30px;text-align:center;background:#11182d}
+</style>
+</head>
+<body>
+<header><strong>OnlineExamSystem</strong><nav><a href="#home">Home</a><a href="#features">Features</a><a href="#about">About</a><a href="#contact">Contact</a><a href="leaderboard.html">Leaderboard</a><a href="profile.html">Profile</a></nav></header>
+<section id="home" class="hero"><h1>Board Exam Practice Platform</h1><p>Practice with a real exam experience.</p><a class="btn" href="student-login.html">Student Login</a><a class="btn" href="admin-login.html">Admin Login</a></section>
+<section id="features"><h2>Features</h2><div class="grid"><div class="card">Real Exam Experience</div><div class="card">Auto Save</div><div class="card">Countdown Timer</div><div class="card">Question Palette</div><div class="card">Instant Results</div><div class="card">Leaderboard</div><div class="card">Programming Questions</div><div class="card">Secure Login</div></div></section>
+<section id="about"><h2>About</h2><p>This platform simulates board exam workflow for practice purposes only.</p></section>
+<footer id="contact">© 2026 OnlineExamSystem</footer>
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.onclick=e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'})});
+</script>
+</body></html>

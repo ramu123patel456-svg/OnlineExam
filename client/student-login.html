@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Login</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.container{
+width:420px;
+background:#1e293b;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+h1{
+text-align:center;
+margin-bottom:20px;
+}
+
+.input-group{
+margin-bottom:18px;
+}
+
+label{
+display:block;
+margin-bottom:8px;
+font-weight:bold;
+}
+
+input{
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+font-size:16px;
+outline:none;
+}
+
+button{
+width:100%;
+padding:14px;
+border:none;
+border-radius:8px;
+background:#2563eb;
+color:white;
+font-size:16px;
+cursor:pointer;
+margin-top:15px;
+}
+
+button:hover{
+background:#1d4ed8;
+}
+
+.error{
+margin-top:15px;
+color:#ff6b6b;
+text-align:center;
+}
+
+.footer{
+margin-top:20px;
+text-align:center;
+}
+
+.footer a{
+color:#60a5fa;
+text-decoration:none;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Student Login</h1>
+
+<form id="loginForm">
+
+<div class="input-group">
+
+<label>Student ID</label>
+
+<input
+type="text"
+id="studentId"
+placeholder="Example: Rahul@001"
+autocomplete="username"
+required>
+
+</div>
+
+<div class="input-group">
+
+<label>Password</label>
+
+<input
+type="password"
+id="password"
+placeholder="Enter Password"
+autocomplete="current-password"
+required>
+
+</div>
+
+<button type="submit">
+
+Start Practice Exam
+
+</button>
+
+</form>
+
+<p class="error" id="error"></p>
+
+<div class="footer">
+
+<a href="index.html">
+
+← Back to Home
+
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+const form=document.getElementById("loginForm");
+
+form.addEventListener("submit",async(e)=>{
+
+e.preventDefault();
+
+const studentId=document.getElementById("studentId").value.trim();
+
+const password=document.getElementById("password").value;
+
+const error=document.getElementById("error");
+
+error.textContent="";
+
+if(studentId===""){
+
+error.textContent="Enter Student ID";
+
+return;
+
+}
+
+if(password===""){
+
+error.textContent="Enter Password";
+
+return;
+
+}
+
+try{
+
+const response=await fetch("/api/student/login",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+studentId,
+
+password
+
+})
+
+});
+
+const data=await response.json();
+
+if(!response.ok){
+
+error.textContent=data.message;
+
+return;
+
+}
+
+sessionStorage.setItem("student",JSON.stringify(data.student));
+sessionStorage.setItem("studentToken",data.token);
+localStorage.removeItem("student");
+localStorage.removeItem("studentToken");
+
+window.location.href="instructions.html";
+
+}catch(err){
+
+error.textContent="Unable to connect to server. Start the Node.js server and open this page at http://localhost:3000.";
+
+console.error(err);
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
