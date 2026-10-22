@@ -521,6 +521,10 @@ function publicExam(exam, variant = null, rollNumber = '') {
     id: exam.id, title: exam.title, subject: exam.subject, className: exam.className,
     durationMinutes: Math.max(1, Number(exam.durationMinutes)||60), totalMarks: exam.totalMarks, passingMarks: exam.passingMarks,
     description: exam.description, status: exam.status,
+    startedAt: exam.startedAt || null,
+    scheduledAt: exam.scheduledAt || null,
+    endsAt: exam.endsAt || null,
+    serverNow: Date.now(),
     questions: orderedQuestions.map(q => {
       const safe = { ...q, ...(q.type==='programming' ? {marks:5} : {}) };
       delete safe.answer;
@@ -924,11 +928,47 @@ app.put('/api/admin/exams/:id', requireAdmin, async (req,res,next)=>{
   }catch(e){next(e);}
 });
 
+app.post('/api/admin/exams/:id/lifecycle', requireAdmin, async (req,res,next)=>{
+  try {
+    const exam=await getExam(req.params.id);
+    if(!exam)return res.status(404).json({ok:false,message:'Exam not found.'});
+    const action=String(req.body.action||'');
+    const ref=requireFirebase().collection('exams').doc(req.params.id);
+    const now=Date.now();
+    let patch={updatedAt:new Date(now).toISOString()};
+    if(action==='start'){
+      if(exam.status==='Live')return res.status(409).json({ok:false,message:'This exam is already live.'});
+      if(!['Published','Scheduled','Ended'].includes(exam.status))return res.status(409).json({ok:false,message:'Publish the exam before starting it.'});
+      const durationMinutes=Math.max(1,Math.min(600,Number(req.body.durationMinutes)||Number(exam.durationMinutes)||120));
+      const startedAt=new Date(now).toISOString();
+      patch={...patch,status:'Live',durationMinutes,startedAt,scheduledAt:null,endsAt:new Date(now+durationMinutes*60000).toISOString(),endedAt:null};
+    } else if(action==='schedule'){
+      const scheduledMs=Date.parse(String(req.body.scheduledAt||''));
+      if(!Number.isFinite(scheduledMs)||scheduledMs<=now)return res.status(400).json({ok:false,message:'Choose a future start date and time.'});
+      if(exam.status==='Live')return res.status(409).json({ok:false,message:'End the live exam before scheduling it again.'});
+      const durationMinutes=Math.max(1,Math.min(600,Number(req.body.durationMinutes)||Number(exam.durationMinutes)||120));
+      patch={...patch,status:'Scheduled',scheduledAt:new Date(scheduledMs).toISOString(),scheduledDurationMinutes:durationMinutes,startedAt:null,endsAt:null,endedAt:null};
+    } else if(action==='end'){
+      if(exam.status!=='Live')return res.status(409).json({ok:false,message:'Only a live exam can be ended.'});
+      const endedAt=new Date(now).toISOString();
+      patch={...patch,status:'Ended',endsAt:endedAt,endedAt};
+    } else if(action==='reset'){
+      if(exam.status==='Live')return res.status(409).json({ok:false,message:'End the live exam first.'});
+      patch={...patch,status:'Published',scheduledAt:null,scheduledDurationMinutes:null,startedAt:null,endsAt:null,endedAt:null};
+    } else return res.status(400).json({ok:false,message:'Unknown exam action.'});
+    await ref.set(patch,{merge:true});
+    await writeAudit('exam_lifecycle_changed',{admin:req.admin.email,examId:req.params.id,action,...patch});
+    const updated=await getExam(req.params.id);
+    res.json({ok:true,message:action==='start'?'Exam started. All students share the same server deadline.':action==='schedule'?'Exam start scheduled.':action==='end'?'Exam ended.':'Exam reset to Published.',exam:publicExam(updated)});
+  }catch(e){next(e);}
+});
+
 app.patch('/api/admin/exams/:id/status', requireAdmin, async (req,res,next)=>{
   try {
     const status=String(req.body.status||''); if(!['Published','Draft'].includes(status))return res.status(400).json({ok:false,message:'Status must be Published or Draft.'});
     const exam=await getExam(req.params.id); if(!exam)return res.status(404).json({ok:false,message:'Exam not found.'});
-    const updatedAt=new Date().toISOString(); await requireFirebase().collection('exams').doc(req.params.id).update({status,updatedAt});
+    if(exam.status==='Live')return res.status(409).json({ok:false,message:'End the live exam before changing its publish status.'});
+    const updatedAt=new Date().toISOString(); await requireFirebase().collection('exams').doc(req.params.id).update({status,scheduledAt:null,scheduledDurationMinutes:null,startedAt:null,endsAt:null,endedAt:null,updatedAt});
     await writeAudit('exam_status_changed',{admin:req.admin.email,examId:req.params.id,status});
     res.json({ok:true,exam:publicExam({...exam,status,updatedAt})});
   }catch(e){next(e);}
@@ -968,15 +1008,27 @@ app.get('/api/exam', requireStudent, async (req,res,next)=>{
       // IMPORTANT: when no exam id is supplied, always use the newest published exam.
       // Previously Firestore's limit(1) could return an older published exam (e.g. 50 min)
       // even after the admin updated/published a newer 90-minute exam.
-      const snap=await requireFirebase().collection('exams').where('status','==','Published').get();
-      const published=snap.docs.map(d=>({id:d.id,...d.data()}));
-      published.sort((a,b)=>new Date(b.updatedAt||b.createdAt||0).getTime()-new Date(a.updatedAt||a.createdAt||0).getTime());
-      exam=published[0]||null;
+      const snap=await requireFirebase().collection('exams').where('status','==','Live').get();
+      const live=snap.docs.map(d=>({id:d.id,...d.data()}));
+      live.sort((a,b)=>new Date(b.startedAt||0).getTime()-new Date(a.startedAt||0).getTime());
+      exam=live[0]||null;
     }
-    if(!exam||exam.status!=='Published')return res.status(404).json({ok:false,message:'Published exam not found.'});
+    if(!exam||exam.status!=='Live')return res.status(423).json({ok:false,message:'The exam has not started yet or has already ended. Please wait for your teacher.'});
+    const endMs=Date.parse(exam.endsAt||'');
+    if(!Number.isFinite(endMs)||Date.now()>=endMs)return res.status(423).json({ok:false,message:'The exam deadline has passed.'});
     const studentKey=req.student.studentId || req.student.rollNumber;
     const variant=variantForStudent(exam, studentKey);
     res.json({ok:true,exam:publicExam(exam, variant, studentKey)});
+  }catch(e){next(e);}
+});
+
+app.get('/api/exam/status', requireStudent, async (req,res,next)=>{
+  try {
+    const examId=String(req.query.id||'').trim();
+    if(!examId)return res.status(400).json({ok:false,message:'Exam ID is required.'});
+    const exam=await getExam(examId);
+    if(!exam)return res.status(404).json({ok:false,message:'Exam not found.'});
+    res.json({ok:true,status:exam.status,startedAt:exam.startedAt||null,endsAt:exam.endsAt||null,serverNow:Date.now()});
   }catch(e){next(e);}
 });
 
@@ -1010,7 +1062,9 @@ app.post('/api/exam/submit', requireStudent, async (req,res,next)=>{
   try {
     const student=req.student,answers=req.body.answers||{},examId=String(req.body.examId||'').trim();
     const exam=await getExam(examId);
-    if(!exam||exam.status!=='Published')return res.status(404).json({ok:false,message:'Published exam not found.'});
+    if(!exam||!['Live','Ended'].includes(exam.status))return res.status(404).json({ok:false,message:'This exam is not live.'});
+    const officialEndMs=Date.parse(exam.endsAt||'');
+    if(!Number.isFinite(officialEndMs)||Date.now()>officialEndMs+15000)return res.status(409).json({ok:false,message:'The official exam deadline has passed. Late submissions are not accepted.'});
     if(!String(student.rollNumber||'').trim()||!String(student.name||'').trim())return res.status(400).json({ok:false,message:'Student login information is missing.'});
     // Answers arrive using the student's shuffled option indexes. Convert them
     // back to the original question indexes before grading.
@@ -1099,8 +1153,31 @@ app.get('*',(req,res)=>res.sendFile(path.join(CLIENT_DIR,'index.html')));
 
 app.use((err,req,res,next)=>{console.error(err);const status=err.statusCode||500;res.status(status).json({ok:false,message:err.message||'Server error.'});});
 
+async function refreshExamLifecycle(){
+  try {
+    const snap=await requireFirebase().collection('exams').where('status','in',['Scheduled','Live']).get();
+    const now=Date.now();
+    const batch=requireFirebase().batch();
+    let changed=0;
+    for(const doc of snap.docs){
+      const exam=doc.data();
+      const scheduled=Date.parse(exam.scheduledAt||'');
+      const ends=Date.parse(exam.endsAt||'');
+      if(exam.status==='Scheduled'&&Number.isFinite(scheduled)&&scheduled<=now){
+        const durationMinutes=Math.max(1,Math.min(600,Number(exam.scheduledDurationMinutes)||Number(exam.durationMinutes)||120));
+        batch.set(doc.ref,{status:'Live',durationMinutes,startedAt:new Date(scheduled).toISOString(),endsAt:new Date(scheduled+durationMinutes*60000).toISOString(),scheduledAt:null,scheduledDurationMinutes:null,updatedAt:new Date(now).toISOString()},{merge:true}); changed++;
+      } else if(exam.status==='Live'&&Number.isFinite(ends)&&ends<=now){
+        batch.set(doc.ref,{status:'Ended',endedAt:new Date(ends).toISOString(),updatedAt:new Date(now).toISOString()},{merge:true}); changed++;
+      }
+    }
+    if(changed)await batch.commit();
+  } catch(e) { console.error('Exam lifecycle refresh failed:',e.message); }
+}
 async function boot(){
-  try { await migrateJsonIfRequested(); await seedDefaultExam(); app.listen(PORT,()=>console.log(`\nOnline Exam System running at http://localhost:${PORT}\nDatabase: ${localMode ? 'local JSON (no Firebase credentials needed)' : 'Firebase Firestore'}\n`)); }
-  catch(e){console.error('Startup failed:',e.message);process.exit(1);}
+  try {
+    await migrateJsonIfRequested(); await seedDefaultExam();
+    app.listen(PORT,()=>console.log(`\nOnline Exam System running at http://localhost:${PORT}\nDatabase: ${localMode ? 'local JSON (no Firebase credentials needed)' : 'Firebase Firestore'}\n`));
+    setInterval(refreshExamLifecycle,5000);
+  } catch(e){console.error('Startup failed:',e.message);process.exit(1);}
 }
 boot();

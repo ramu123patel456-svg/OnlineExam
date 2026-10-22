@@ -1,0 +1,3555 @@
+{
+  "exams": {
+    "it-std12-80-textbook-001": {
+      "id": "it-std12-80-textbook-001",
+      "title": "Standard XII Information Technology — 80 Marks Textbook Practice Test",
+      "subject": "Information Technology",
+      "className": "12th Science",
+      "durationMinutes": 120,
+      "totalMarks": 80,
+      "passingMarks": 28,
+      "description": "Board-pattern 80-mark practice paper based on the supplied Standard XII Information Technology textbook and question-paper format. Q1 and Q2 contain 10 subquestions each; Q7 requires any five; Q8 contains HTML OR and JavaScript OR programming sections.",
+      "status": "Ended",
+      "variantCount": 25,
+      "questions": [
+        {
+          "id": "q1-1",
+          "sectionId": "q1",
+          "sectionNumber": 1,
+          "subNumber": 1,
+          "sectionTitle": "Q1 — Fill in the Blanks",
+          "type": "fill_blank",
+          "question": "HTML5 provides a new input type such as __________ for selecting a date.",
+          "marks": 1,
+          "answer": "date"
+        },
+        {
+          "id": "q1-2",
+          "sectionId": "q1",
+          "sectionNumber": 1,
+          "subNumber": 2,
+          "sectionTitle": "Q1 — Fill in the Blanks",
+          "type": "fill_blank",
+          "question": "The HTML element used to embed an audio file is the __________ element.",
+          "marks": 1,
+          "answer": "audio"
+        },
+        {
+          "id": "q1-3",
+          "sectionId": "q1",
+          "sectionNumber": 1,
+          "subNumber": 3,
+          "sectionTitle": "Q1 — Fill in the Blanks",
+          "type": "fill_blank",
+          "question": "An image with several clickable regions is called an __________.",
+          "marks": 1,
+          "answer": "image map"
+        },
+        {
+          "id": "q1-4",
+          "sectionId": "q1",
+          "sectionNumber": 1,
+          "subNumber": 4,
+          "sectionTitle": "Q1 — Fill in the Blanks",
+          "type": "fill_blank",
+          "question": "The logical structure of an HTML/XML document is represented by the __________.",
+          "marks": 1,
+          "answer": "DOM"
+        },
+        {
+          "id": "q1-5",
+          "sectionId": "q1",
+          "sectionNumber": 1,
+          "subNumber": 5,
+          "sectionTitle": "Q1 — Fill in the Blanks",
+          "type": "fill_blank",
+          "question": "JavaScript is a lightweight, platform-__________ scripting language.",
+          "marks": 1,
+          "answer": "independent"
+        },
+        {
+          "id": "q1-6",
+          "sectionId": "q1",
+          "sectionNumber": 1,
+          "subNumber": 6,
+          "sectionTitle": "Q1 — Fill in the Blanks",
+          "type": "fill_blank",
+          "question": "The statement commonly used to leave a loop immediately is __________.",
+          "marks": 1,
+          "answer": "break"
+        },
+        {
+          "id": "q1-7",
+          "sectionId": "q1",
+          "sectionNumber": 1,
+          "subNumber": 7,
+          "sectionTitle": "Q1 — Fill in the Blanks",
+          "type": "fill_blank",
+          "question": "PHP is mainly a __________-side scripting language.",
+          "marks": 1,
+          "answer": "server"
+        },
+        {
+          "id": "q1-8",
+          "sectionId": "q1",
+          "sectionNumber": 1,
+          "subNumber": 8,
+          "sectionTitle": "Q1 — Fill in the Blanks",
+          "type": "fill_blank",
+          "question": "In PHP, a variable name begins with the __________ symbol.",
+          "marks": 1,
+          "answer": "$"
+        },
+        {
+          "id": "q1-9",
+          "sectionId": "q1",
+          "sectionNumber": 1,
+          "subNumber": 9,
+          "sectionTitle": "Q1 — Fill in the Blanks",
+          "type": "fill_blank",
+          "question": "IOT stands for __________ of Things.",
+          "marks": 1,
+          "answer": "Internet"
+        },
+        {
+          "id": "q1-10",
+          "sectionId": "q1",
+          "sectionNumber": 1,
+          "subNumber": 10,
+          "sectionTitle": "Q1 — Fill in the Blanks",
+          "type": "fill_blank",
+          "question": "The paperless exchange of business information using electronic means is called __________.",
+          "marks": 1,
+          "answer": "EDI"
+        },
+        {
+          "id": "q2-1",
+          "sectionId": "q2",
+          "sectionNumber": 2,
+          "subNumber": 1,
+          "sectionTitle": "Q2 — True / False",
+          "type": "true_false",
+          "question": "HTML5 supports advanced form controls for collecting and validating user input.",
+          "marks": 1,
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "q2-2",
+          "sectionId": "q2",
+          "sectionNumber": 2,
+          "subNumber": 2,
+          "sectionTitle": "Q2 — True / False",
+          "type": "true_false",
+          "question": "The <video> element can use multiple <source> elements.",
+          "marks": 1,
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "q2-3",
+          "sectionId": "q2",
+          "sectionNumber": 2,
+          "subNumber": 3,
+          "sectionTitle": "Q2 — True / False",
+          "type": "true_false",
+          "question": "In a client-side image map, the <area> element defines clickable regions.",
+          "marks": 1,
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "q2-4",
+          "sectionId": "q2",
+          "sectionNumber": 2,
+          "subNumber": 4,
+          "sectionTitle": "Q2 — True / False",
+          "type": "true_false",
+          "question": "JavaScript is case-sensitive.",
+          "marks": 1,
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "q2-5",
+          "sectionId": "q2",
+          "sectionNumber": 2,
+          "subNumber": 5,
+          "sectionTitle": "Q2 — True / False",
+          "type": "true_false",
+          "question": "Math.ceil() returns the nearest integer greater than or equal to a number.",
+          "marks": 1,
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "q2-6",
+          "sectionId": "q2",
+          "sectionNumber": 2,
+          "subNumber": 6,
+          "sectionTitle": "Q2 — True / False",
+          "type": "true_false",
+          "question": "The getDay() method of the JavaScript Date object returns the month number.",
+          "marks": 1,
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "q2-7",
+          "sectionId": "q2",
+          "sectionNumber": 2,
+          "subNumber": 7,
+          "sectionTitle": "Q2 — True / False",
+          "type": "true_false",
+          "question": "PHP variables begin with the $ symbol.",
+          "marks": 1,
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "q2-8",
+          "sectionId": "q2",
+          "sectionNumber": 2,
+          "subNumber": 8,
+          "sectionTitle": "Q2 — True / False",
+          "type": "true_false",
+          "question": "PHP code can be embedded inside HTML.",
+          "marks": 1,
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "q2-9",
+          "sectionId": "q2",
+          "sectionNumber": 2,
+          "subNumber": 9,
+          "sectionTitle": "Q2 — True / False",
+          "type": "true_false",
+          "question": "5G is a generation of cellular network technology designed for high-speed data communication.",
+          "marks": 1,
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "q2-10",
+          "sectionId": "q2",
+          "sectionNumber": 2,
+          "subNumber": 10,
+          "sectionTitle": "Q2 — True / False",
+          "type": "true_false",
+          "question": "E-governance means using information technology in government processes and services.",
+          "marks": 1,
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "q3-1",
+          "sectionId": "q3",
+          "sectionNumber": 3,
+          "subNumber": 1,
+          "sectionTitle": "Q3 — Multiple Choice: Select ONE",
+          "type": "mcq1",
+          "question": "Which HTML element is used to provide a video on a webpage?",
+          "marks": 1,
+          "options": [
+            "<audio>",
+            "<video>",
+            "<media>",
+            "<movie>"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "q3-2",
+          "sectionId": "q3",
+          "sectionNumber": 3,
+          "subNumber": 2,
+          "sectionTitle": "Q3 — Multiple Choice: Select ONE",
+          "type": "mcq1",
+          "question": "Which attribute of <img> points to a client-side image map?",
+          "marks": 1,
+          "options": [
+            "map",
+            "usemap",
+            "hotspot",
+            "region"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "q3-3",
+          "sectionId": "q3",
+          "sectionNumber": 3,
+          "subNumber": 3,
+          "sectionTitle": "Q3 — Multiple Choice: Select ONE",
+          "type": "mcq1",
+          "question": "Which JavaScript object represents the browser window?",
+          "marks": 1,
+          "options": [
+            "document",
+            "screen",
+            "window",
+            "browser"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "q3-4",
+          "sectionId": "q3",
+          "sectionNumber": 3,
+          "subNumber": 4,
+          "sectionTitle": "Q3 — Multiple Choice: Select ONE",
+          "type": "mcq1",
+          "question": "Which JavaScript statement is a multi-way decision statement?",
+          "marks": 1,
+          "options": [
+            "switch...case",
+            "repeat",
+            "select...loop",
+            "choose"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "q3-5",
+          "sectionId": "q3",
+          "sectionNumber": 3,
+          "subNumber": 5,
+          "sectionTitle": "Q3 — Multiple Choice: Select ONE",
+          "type": "mcq1",
+          "question": "Which extension is normally used for a PHP program file?",
+          "marks": 1,
+          "options": [
+            ".html",
+            ".php",
+            ".js",
+            ".css"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "q3-6",
+          "sectionId": "q3",
+          "sectionNumber": 3,
+          "subNumber": 6,
+          "sectionTitle": "Q3 — Multiple Choice: Select ONE",
+          "type": "mcq1",
+          "question": "Which PHP function returns a portion of a string?",
+          "marks": 1,
+          "options": [
+            "trim()",
+            "substr()",
+            "count()",
+            "splitOnly()"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "q3-7",
+          "sectionId": "q3",
+          "sectionNumber": 3,
+          "subNumber": 7,
+          "sectionTitle": "Q3 — Multiple Choice: Select ONE",
+          "type": "mcq1",
+          "question": "Which of the following is a cloud service model?",
+          "marks": 1,
+          "options": [
+            "SaaS",
+            "HTML",
+            "DOM",
+            "CSS"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "q3-8",
+          "sectionId": "q3",
+          "sectionNumber": 3,
+          "subNumber": 8,
+          "sectionTitle": "Q3 — Multiple Choice: Select ONE",
+          "type": "mcq1",
+          "question": "Which generation of cellular technology is the fifth generation of mobile networks?",
+          "marks": 1,
+          "options": [
+            "2G",
+            "3G",
+            "4G",
+            "5G"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "q3-9",
+          "sectionId": "q3",
+          "sectionNumber": 3,
+          "subNumber": 9,
+          "sectionTitle": "Q3 — Multiple Choice: Select ONE",
+          "type": "mcq1",
+          "question": "Which is an example of G2C e-governance?",
+          "marks": 1,
+          "options": [
+            "Government-to-Citizen service",
+            "Government-to-Employee only",
+            "Business-to-Business",
+            "Customer-to-Customer"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "q3-10",
+          "sectionId": "q3",
+          "sectionNumber": 3,
+          "subNumber": 10,
+          "sectionTitle": "Q3 — Multiple Choice: Select ONE",
+          "type": "mcq1",
+          "question": "Which type of e-commerce is a transaction between a business and a customer?",
+          "marks": 1,
+          "options": [
+            "B2B",
+            "B2C",
+            "C2C",
+            "C2B"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "q4-1",
+          "sectionId": "q4",
+          "sectionNumber": 4,
+          "subNumber": 1,
+          "sectionTitle": "Q4 — Multiple Choice: Select TWO",
+          "type": "mcq2",
+          "question": "Which two are valid HTML5 input types?",
+          "marks": 2,
+          "options": [
+            "date",
+            "email",
+            "webpage",
+            "browser"
+          ],
+          "answer": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "q4-2",
+          "sectionId": "q4",
+          "sectionNumber": 4,
+          "subNumber": 2,
+          "sectionTitle": "Q4 — Multiple Choice: Select TWO",
+          "type": "mcq2",
+          "question": "Which two tags are used for HTML5 media?",
+          "marks": 2,
+          "options": [
+            "audio",
+            "video",
+            "soundbox",
+            "film"
+          ],
+          "answer": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "q4-3",
+          "sectionId": "q4",
+          "sectionNumber": 4,
+          "subNumber": 3,
+          "sectionTitle": "Q4 — Multiple Choice: Select TWO",
+          "type": "mcq2",
+          "question": "Which two are parts of a client-side image map?",
+          "marks": 2,
+          "options": [
+            "map",
+            "area",
+            "hotspotbox",
+            "pointer"
+          ],
+          "answer": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "q4-4",
+          "sectionId": "q4",
+          "sectionNumber": 4,
+          "subNumber": 4,
+          "sectionTitle": "Q4 — Multiple Choice: Select TWO",
+          "type": "mcq2",
+          "question": "Which two are JavaScript built-in objects?",
+          "marks": 2,
+          "options": [
+            "Date",
+            "Math",
+            "BrowserPage",
+            "WebFile"
+          ],
+          "answer": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "q4-5",
+          "sectionId": "q4",
+          "sectionNumber": 4,
+          "subNumber": 5,
+          "sectionTitle": "Q4 — Multiple Choice: Select TWO",
+          "type": "mcq2",
+          "question": "Which two are JavaScript event handlers?",
+          "marks": 2,
+          "options": [
+            "onFocus",
+            "onBlur",
+            "onJump",
+            "onRun"
+          ],
+          "answer": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "q4-6",
+          "sectionId": "q4",
+          "sectionNumber": 4,
+          "subNumber": 6,
+          "sectionTitle": "Q4 — Multiple Choice: Select TWO",
+          "type": "mcq2",
+          "question": "Which two are valid PHP data types?",
+          "marks": 2,
+          "options": [
+            "Integer",
+            "Array",
+            "VarcharHTML",
+            "WebObject"
+          ],
+          "answer": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "q4-7",
+          "sectionId": "q4",
+          "sectionNumber": 4,
+          "subNumber": 7,
+          "sectionTitle": "Q4 — Multiple Choice: Select TWO",
+          "type": "mcq2",
+          "question": "Which two are types of PHP arrays?",
+          "marks": 2,
+          "options": [
+            "Indexed",
+            "Associative",
+            "Browser",
+            "Platform"
+          ],
+          "answer": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "q4-8",
+          "sectionId": "q4",
+          "sectionNumber": 4,
+          "subNumber": 8,
+          "sectionTitle": "Q4 — Multiple Choice: Select TWO",
+          "type": "mcq2",
+          "question": "Which two are cloud service models?",
+          "marks": 2,
+          "options": [
+            "SaaS",
+            "PaaS",
+            "HTMLS",
+            "DOMS"
+          ],
+          "answer": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "q4-9",
+          "sectionId": "q4",
+          "sectionNumber": 4,
+          "subNumber": 9,
+          "sectionTitle": "Q4 — Multiple Choice: Select TWO",
+          "type": "mcq2",
+          "question": "Which two are common e-commerce payment methods?",
+          "marks": 2,
+          "options": [
+            "E-wallet",
+            "Bank transfer",
+            "HTML form",
+            "CSS rule"
+          ],
+          "answer": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "q4-10",
+          "sectionId": "q4",
+          "sectionNumber": 4,
+          "subNumber": 10,
+          "sectionTitle": "Q4 — Multiple Choice: Select TWO",
+          "type": "mcq2",
+          "question": "Which two are forms/types of e-governance?",
+          "marks": 2,
+          "options": [
+            "G2C",
+            "G2E",
+            "B2C",
+            "C2B"
+          ],
+          "answer": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "q5-1",
+          "sectionId": "q5",
+          "sectionNumber": 5,
+          "subNumber": 1,
+          "sectionTitle": "Q5 — Multiple Choice: Select THREE",
+          "type": "mcq3",
+          "question": "Which THREE are features/characteristics of JavaScript?",
+          "marks": 3,
+          "options": [
+            "It supports event-driven programming",
+            "It is platform independent",
+            "It provides built-in objects",
+            "It requires compilation before every browser execution",
+            "It cannot handle dates"
+          ],
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "id": "q5-2",
+          "sectionId": "q5",
+          "sectionNumber": 5,
+          "subNumber": 2,
+          "sectionTitle": "Q5 — Multiple Choice: Select THREE",
+          "type": "mcq3",
+          "question": "Which THREE are types of PHP arrays?",
+          "marks": 3,
+          "options": [
+            "Indexed",
+            "Associative",
+            "Multidimensional",
+            "Browser",
+            "Universal",
+            "Graphic"
+          ],
+          "answer": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "id": "q6-1",
+          "sectionId": "q6",
+          "sectionNumber": 6,
+          "subNumber": 1,
+          "sectionTitle": "Q6 — Match the Following",
+          "type": "match",
+          "question": "Match the following pairs.",
+          "marks": 4,
+          "pairs": [
+            {
+              "left": "1. JavaScript Date object",
+              "options": [
+                "a. Paperless exchange of business information",
+                "b. Platform with tools for developing/hosting applications",
+                "c. Works with dates and time",
+                "d. Government services for citizens"
+              ]
+            },
+            {
+              "left": "2. PaaS",
+              "options": [
+                "a. Paperless exchange of business information",
+                "b. Platform with tools for developing/hosting applications",
+                "c. Works with dates and time",
+                "d. Government services for citizens"
+              ]
+            },
+            {
+              "left": "3. EDI",
+              "options": [
+                "a. Paperless exchange of business information",
+                "b. Platform with tools for developing/hosting applications",
+                "c. Works with dates and time",
+                "d. Government services for citizens"
+              ]
+            },
+            {
+              "left": "4. G2C",
+              "options": [
+                "a. Paperless exchange of business information",
+                "b. Platform with tools for developing/hosting applications",
+                "c. Works with dates and time",
+                "d. Government services for citizens"
+              ]
+            }
+          ],
+          "answer": {
+            "0": "2",
+            "1": "1",
+            "2": "0",
+            "3": "3"
+          }
+        },
+        {
+          "id": "q7-1",
+          "sectionId": "q7",
+          "sectionNumber": 7,
+          "subNumber": 1,
+          "sectionTitle": "Q7 — Answer Briefly (Attempt ANY FIVE)",
+          "type": "short_answer",
+          "question": "Explain any two advantages of using HTML5 advanced form controls.",
+          "marks": 2,
+          "answer": "",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-2",
+          "sectionId": "q7",
+          "sectionNumber": 7,
+          "subNumber": 2,
+          "sectionTitle": "Q7 — Answer Briefly (Attempt ANY FIVE)",
+          "type": "short_answer",
+          "question": "Differentiate between the audio and video elements in HTML5.",
+          "marks": 2,
+          "answer": "",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-3",
+          "sectionId": "q7",
+          "sectionNumber": 7,
+          "subNumber": 3,
+          "sectionTitle": "Q7 — Answer Briefly (Attempt ANY FIVE)",
+          "type": "short_answer",
+          "question": "Explain the purpose of the DOM in JavaScript.",
+          "marks": 2,
+          "answer": "",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-4",
+          "sectionId": "q7",
+          "sectionNumber": 7,
+          "subNumber": 4,
+          "sectionTitle": "Q7 — Answer Briefly (Attempt ANY FIVE)",
+          "type": "short_answer",
+          "question": "Write any two JavaScript event handlers and state when they are used.",
+          "marks": 2,
+          "answer": "",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-5",
+          "sectionId": "q7",
+          "sectionNumber": 7,
+          "subNumber": 5,
+          "sectionTitle": "Q7 — Answer Briefly (Attempt ANY FIVE)",
+          "type": "short_answer",
+          "question": "State any two features of PHP.",
+          "marks": 2,
+          "answer": "",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-6",
+          "sectionId": "q7",
+          "sectionNumber": 7,
+          "subNumber": 6,
+          "sectionTitle": "Q7 — Answer Briefly (Attempt ANY FIVE)",
+          "type": "short_answer",
+          "question": "Explain the difference between client-side and server-side scripting.",
+          "marks": 2,
+          "answer": "",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-7",
+          "sectionId": "q7",
+          "sectionNumber": 7,
+          "subNumber": 7,
+          "sectionTitle": "Q7 — Answer Briefly (Attempt ANY FIVE)",
+          "type": "short_answer",
+          "question": "Explain any two applications of IOT or 5G.",
+          "marks": 2,
+          "answer": "",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-8",
+          "sectionId": "q7",
+          "sectionNumber": 7,
+          "subNumber": 8,
+          "sectionTitle": "Q7 — Answer Briefly (Attempt ANY FIVE)",
+          "type": "short_answer",
+          "question": "Explain any two advantages of e-commerce or e-governance.",
+          "marks": 2,
+          "answer": "",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q8a-1",
+          "sectionId": "q8a",
+          "sectionNumber": 8,
+          "subNumber": 1,
+          "sectionTitle": "Q8(A) — Write a Program Using HTML (Attempt ANY ONE)",
+          "type": "programming",
+          "question": "Create a webpage titled “My College”. Use a heading, horizontal line, short paragraph, an ordered list of three courses and an unordered list of five facilities.",
+          "marks": 5,
+          "answer": "",
+          "codeLanguage": "html",
+          "orGroup": "Q8A-HTML",
+          "orOption": "1"
+        },
+        {
+          "id": "q8a-2",
+          "sectionId": "q8a",
+          "sectionNumber": 8,
+          "subNumber": 2,
+          "sectionTitle": "Q8(A) — Write a Program Using HTML (Attempt ANY ONE)",
+          "type": "programming",
+          "question": "Create a Student Registration webpage using an HTML5 form. Include name, email, date, number, URL and submit controls using suitable HTML5 input types.",
+          "marks": 5,
+          "answer": "",
+          "codeLanguage": "html",
+          "orGroup": "Q8A-HTML",
+          "orOption": "2"
+        },
+        {
+          "id": "q8b-1",
+          "sectionId": "q8b",
+          "sectionNumber": 8,
+          "subNumber": 1,
+          "sectionTitle": "Q8(B) — Write a Program Using JavaScript (Attempt ANY ONE)",
+          "type": "programming",
+          "question": "Write an event-driven JavaScript program that accepts two numbers and displays their addition, multiplication, division and remainder.",
+          "marks": 5,
+          "answer": "",
+          "codeLanguage": "javascript",
+          "orGroup": "Q8B-JS",
+          "orOption": "1"
+        },
+        {
+          "id": "q8b-2",
+          "sectionId": "q8b",
+          "sectionNumber": 8,
+          "subNumber": 2,
+          "sectionTitle": "Q8(B) — Write a Program Using JavaScript (Attempt ANY ONE)",
+          "type": "programming",
+          "question": "Write a JavaScript program that accepts a string and counts and displays the number of vowels in it.",
+          "marks": 5,
+          "answer": "",
+          "codeLanguage": "javascript",
+          "orGroup": "Q8B-JS",
+          "orOption": "2"
+        }
+      ],
+      "source": "textbook-practice-paper",
+      "createdAt": "2026-10-22T05:19:07.003Z",
+      "updatedAt": "2026-10-22T05:27:02.522Z",
+      "startedAt": "2026-10-22T05:21:20.435Z",
+      "scheduledAt": null,
+      "endsAt": "2026-10-22T05:27:02.522Z",
+      "endedAt": "2026-10-22T05:27:02.522Z",
+      "scheduledDurationMinutes": null
+    }
+  },
+  "sessions": {
+    "ec7a6ff7f2345094197fed3078feff9db469f4094dbfab104f4f4fa859312eb8": {
+      "type": "admin",
+      "subject": "admin@onlineexam.com",
+      "createdAt": "2026-10-22T04:41:23.158Z",
+      "expiresAt": "2026-10-22T12:41:23.158Z"
+    },
+    "9c3f03abd3361bc37b7a092edf9e03f82501935e15915e2e24e1a0c81483ef11": {
+      "type": "student",
+      "subject": "Rahul@123",
+      "createdAt": "2026-10-22T04:42:33.247Z",
+      "expiresAt": "2026-10-22T12:42:33.247Z"
+    },
+    "a8db8728d039d34abc23cc4346d5dee3fbdd2edd22a762d9c8bd3a503ad61e45": {
+      "type": "student",
+      "subject": "Rahul@123",
+      "createdAt": "2026-10-22T04:52:51.650Z",
+      "expiresAt": "2026-10-22T12:52:51.650Z"
+    },
+    "a818d6481c5edb22a33a3c3322f5ccfec1137ef4abc30e24a23cb562b0a6b9f5": {
+      "type": "admin",
+      "subject": "admin@onlineexam.com",
+      "createdAt": "2026-10-22T04:55:07.664Z",
+      "expiresAt": "2026-10-22T12:55:07.664Z"
+    },
+    "8cc3d0accec7b6d277d620a56bada27dc473c3f5f6e21c193e1630a4f17160ad": {
+      "type": "student",
+      "subject": "Rahul@123",
+      "createdAt": "2026-10-22T04:55:42.803Z",
+      "expiresAt": "2026-10-22T12:55:42.803Z"
+    },
+    "a9893741cf9aa2f43f3477bed2cb42c56424ef8cc04219da83aaff784ff5bf54": {
+      "type": "student",
+      "subject": "Rahul@123",
+      "createdAt": "2026-10-22T04:56:37.491Z",
+      "expiresAt": "2026-10-22T12:56:37.491Z"
+    },
+    "9d896a531989bf3bf0720b673a6515e5959dc69982d356ebc576542ffa7b5186": {
+      "type": "student",
+      "subject": "Rahul@123",
+      "createdAt": "2026-10-22T05:13:05.445Z",
+      "expiresAt": "2026-10-22T13:13:05.445Z"
+    },
+    "e98255f08a9210f637abc4c9c39273093d275254a26892d1da86715357ca52b8": {
+      "type": "student",
+      "subject": "Rahul@123",
+      "createdAt": "2026-10-22T05:19:26.861Z",
+      "expiresAt": "2026-10-22T13:19:26.861Z"
+    },
+    "e6d2a09705e2ba371675d6a2f2570a5a896aa902411f9d721346d00036b8324b": {
+      "type": "admin",
+      "subject": "admin@onlineexam.com",
+      "createdAt": "2026-10-22T05:20:14.589Z",
+      "expiresAt": "2026-10-22T13:20:14.589Z"
+    },
+    "e77e5b9a87d1fbb13e2efe82897831c7f955114284430c9ddbf6b24f64440fb5": {
+      "type": "student",
+      "subject": "Nandu@12",
+      "createdAt": "2026-10-22T05:25:56.612Z",
+      "expiresAt": "2026-10-22T13:25:56.612Z"
+    }
+  },
+  "students": {
+    "Rahul@123": {
+      "studentId": "Rahul@123",
+      "name": "Rahul",
+      "password": "scrypt$f3e45ff251b2ad9911851049cc374616$0672a24ccfc71ced89b43c856a7e29576cf6d6edcdd59d9db9091d7299c0c4730a3506be58919958a9c12c2faf5c3cb19b6615edba7d2bdf6dc76c194bffe5b2",
+      "rollNumber": "123",
+      "className": "12th-B",
+      "phone": "1234567890",
+      "active": true,
+      "createdAt": "2026-10-22T04:42:11.682Z",
+      "updatedAt": "2026-10-22T05:27:05.089Z",
+      "lastLoginAt": "2026-10-22T05:19:26.879Z",
+      "lastAttemptId": "result-1792646825088-42569efe",
+      "lastExamId": "it-std12-80-textbook-001",
+      "lastSubmittedAt": "2026-10-22T05:27:05.089Z"
+    },
+    "Nandu@12": {
+      "studentId": "Nandu@12",
+      "name": "Nandu",
+      "password": "scrypt$3c8117210a0a2c764d8fe15cb2740f05$2b4901325fce90e779e82b9b49dbf1d4ee0ea1aa7f25546af014d6fcdef275e5161747968538b56174284cfdae6d866e3fef0f66deff79b7519b1a4436c6ca0e",
+      "rollNumber": "12",
+      "className": "12th-B",
+      "phone": "1234567890",
+      "active": true,
+      "createdAt": "2026-10-22T05:25:33.551Z",
+      "updatedAt": "2026-10-22T05:27:05.678Z",
+      "lastLoginAt": "2026-10-22T05:25:56.670Z",
+      "lastAttemptId": "result-1792646825675-235b6fd4",
+      "lastExamId": "it-std12-80-textbook-001",
+      "lastSubmittedAt": "2026-10-22T05:27:05.678Z"
+    }
+  },
+  "auditLogs": {
+    "1792644131701-b94d0528c8fde": {
+      "type": "student_created",
+      "admin": "admin@onlineexam.com",
+      "studentId": "Rahul@123",
+      "createdAt": "2026-10-22T04:42:11.701Z"
+    },
+    "1792644174303-ea846f9a5a662": {
+      "type": "exam_lifecycle_changed",
+      "admin": "admin@onlineexam.com",
+      "examId": "it-std12-80-textbook-001",
+      "action": "start",
+      "updatedAt": "2026-10-22T04:42:54.285Z",
+      "status": "Live",
+      "durationMinutes": 120,
+      "startedAt": "2026-10-22T04:42:54.285Z",
+      "scheduledAt": null,
+      "endsAt": "2026-10-22T06:42:54.285Z",
+      "endedAt": null,
+      "createdAt": "2026-10-22T04:42:54.303Z"
+    },
+    "1792644784671-7feb185844b668": {
+      "type": "exam_lifecycle_changed",
+      "admin": "admin@onlineexam.com",
+      "examId": "it-std12-80-textbook-001",
+      "action": "end",
+      "updatedAt": "2026-10-22T04:53:04.656Z",
+      "status": "Ended",
+      "endsAt": "2026-10-22T04:53:04.656Z",
+      "endedAt": "2026-10-22T04:53:04.656Z",
+      "createdAt": "2026-10-22T04:53:04.671Z"
+    },
+    "1792644806083-f9d82cd96e236": {
+      "type": "exam_lifecycle_changed",
+      "admin": "admin@onlineexam.com",
+      "examId": "it-std12-80-textbook-001",
+      "action": "reset",
+      "updatedAt": "2026-10-22T04:53:26.064Z",
+      "status": "Published",
+      "scheduledAt": null,
+      "scheduledDurationMinutes": null,
+      "startedAt": null,
+      "endsAt": null,
+      "endedAt": null,
+      "createdAt": "2026-10-22T04:53:26.083Z"
+    },
+    "1792644953172-07de9103dbcd48": {
+      "type": "exam_lifecycle_changed",
+      "admin": "admin@onlineexam.com",
+      "examId": "it-std12-80-textbook-001",
+      "action": "start",
+      "updatedAt": "2026-10-22T04:55:53.153Z",
+      "status": "Live",
+      "durationMinutes": 120,
+      "startedAt": "2026-10-22T04:55:53.153Z",
+      "scheduledAt": null,
+      "endsAt": "2026-10-22T06:55:53.153Z",
+      "endedAt": null,
+      "createdAt": "2026-10-22T04:55:53.172Z"
+    },
+    "1792646436997-3eabc5515b5d3": {
+      "type": "exam_lifecycle_changed",
+      "admin": "admin@onlineexam.com",
+      "examId": "it-std12-80-textbook-001",
+      "action": "start",
+      "updatedAt": "2026-10-22T05:20:36.978Z",
+      "status": "Live",
+      "durationMinutes": 120,
+      "startedAt": "2026-10-22T05:20:36.978Z",
+      "scheduledAt": null,
+      "endsAt": "2026-10-22T07:20:36.978Z",
+      "endedAt": null,
+      "createdAt": "2026-10-22T05:20:36.996Z"
+    },
+    "1792646472972-d16b876c3f34e8": {
+      "type": "it_80_exam_seeded",
+      "admin": "admin@onlineexam.com",
+      "examId": "it-std12-80-textbook-001",
+      "createdAt": "2026-10-22T05:21:12.972Z"
+    },
+    "1792646477369-3fe58ba04b7c9": {
+      "type": "it_80_exam_seeded",
+      "admin": "admin@onlineexam.com",
+      "examId": "it-std12-80-textbook-001",
+      "createdAt": "2026-10-22T05:21:17.368Z"
+    },
+    "1792646480486-1efdcfe0e768c8": {
+      "type": "exam_lifecycle_changed",
+      "admin": "admin@onlineexam.com",
+      "examId": "it-std12-80-textbook-001",
+      "action": "start",
+      "updatedAt": "2026-10-22T05:21:20.435Z",
+      "status": "Live",
+      "durationMinutes": 120,
+      "startedAt": "2026-10-22T05:21:20.435Z",
+      "scheduledAt": null,
+      "endsAt": "2026-10-22T07:21:20.435Z",
+      "endedAt": null,
+      "createdAt": "2026-10-22T05:21:20.486Z"
+    },
+    "1792646733607-cb3695d45d8238": {
+      "type": "student_created",
+      "admin": "admin@onlineexam.com",
+      "studentId": "Nandu@12",
+      "createdAt": "2026-10-22T05:25:33.607Z"
+    },
+    "1792646822570-39072fd9983e7": {
+      "type": "exam_lifecycle_changed",
+      "admin": "admin@onlineexam.com",
+      "examId": "it-std12-80-textbook-001",
+      "action": "end",
+      "updatedAt": "2026-10-22T05:27:02.522Z",
+      "status": "Ended",
+      "endsAt": "2026-10-22T05:27:02.522Z",
+      "endedAt": "2026-10-22T05:27:02.522Z",
+      "createdAt": "2026-10-22T05:27:02.570Z"
+    }
+  },
+  "results": {
+    "result-1792644656324-2e1b3e6e": {
+      "id": "result-1792644656324-2e1b3e6e",
+      "attemptId": "ef22b900-b89c-42c6-b8f2-0cfd8a3ba992",
+      "student": {
+        "studentId": "Rahul@123",
+        "name": "Rahul",
+        "rollNumber": "123",
+        "className": "12th-B"
+      },
+      "exam": {
+        "id": "it-std12-80-textbook-001",
+        "title": "Standard XII Information Technology — 80 Marks Textbook Practice Test",
+        "subject": "Information Technology",
+        "variantNumber": 2
+      },
+      "score": 28,
+      "objectiveScore": 8,
+      "totalMarks": 80,
+      "subjectiveMax": 20,
+      "subjectiveMarks": 20,
+      "subjectiveChecked": true,
+      "passingMarks": 28,
+      "percentage": 35,
+      "passed": true,
+      "correct": 7,
+      "wrong": 11,
+      "skipped": 31,
+      "attempted": 18,
+      "review": [
+        {
+          "id": "q1-1",
+          "type": "fill_blank",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-2",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-3",
+          "type": "fill_blank",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-4",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-5",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-6",
+          "type": "fill_blank",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-7",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-8",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-9",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-10",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-1",
+          "type": "true_false",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-2",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-3",
+          "type": "true_false",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-4",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-5",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-6",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-7",
+          "type": "true_false",
+          "status": "correct",
+          "awardedMarks": 1,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-8",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-9",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-10",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-1",
+          "type": "mcq1",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-2",
+          "type": "mcq1",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-3",
+          "type": "mcq1",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-4",
+          "type": "mcq1",
+          "status": "correct",
+          "awardedMarks": 1,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-5",
+          "type": "mcq1",
+          "status": "correct",
+          "awardedMarks": 1,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-6",
+          "type": "mcq1",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-7",
+          "type": "mcq1",
+          "status": "correct",
+          "awardedMarks": 1,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-8",
+          "type": "mcq1",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-9",
+          "type": "mcq1",
+          "status": "correct",
+          "awardedMarks": 1,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-10",
+          "type": "mcq1",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-1",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-2",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-3",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-4",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-5",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-6",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-7",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-8",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-9",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-10",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q5-1",
+          "type": "mcq3",
+          "status": "partial",
+          "awardedMarks": 2,
+          "maxMarks": 3,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q5-2",
+          "type": "mcq3",
+          "status": "partial",
+          "awardedMarks": 1,
+          "maxMarks": 3,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q6-1",
+          "type": "match",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 4,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q7-1",
+          "type": "short_answer",
+          "status": "checked",
+          "awardedMarks": 2,
+          "maxMarks": 2,
+          "answer": "grggg",
+          "choiceGroup": "Q7",
+          "choiceMax": 5,
+          "teacherComment": ""
+        },
+        {
+          "id": "q7-2",
+          "type": "short_answer",
+          "status": "checked",
+          "awardedMarks": 2,
+          "maxMarks": 2,
+          "answer": "gtjyj",
+          "choiceGroup": "Q7",
+          "choiceMax": 5,
+          "teacherComment": ""
+        },
+        {
+          "id": "q7-3",
+          "type": "short_answer",
+          "status": "checked",
+          "awardedMarks": 2,
+          "maxMarks": 2,
+          "answer": "kjkuk",
+          "choiceGroup": "Q7",
+          "choiceMax": 5,
+          "teacherComment": ""
+        },
+        {
+          "id": "q7-4",
+          "type": "short_answer",
+          "status": "checked",
+          "awardedMarks": 2,
+          "maxMarks": 2,
+          "answer": "",
+          "teacherComment": "No answer submitted.",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-5",
+          "type": "short_answer",
+          "status": "checked",
+          "awardedMarks": 2,
+          "maxMarks": 2,
+          "answer": "",
+          "teacherComment": "No answer submitted.",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-6",
+          "type": "short_answer",
+          "status": "checked",
+          "awardedMarks": 2,
+          "maxMarks": 2,
+          "answer": "",
+          "teacherComment": "No answer submitted.",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-7",
+          "type": "short_answer",
+          "status": "checked",
+          "awardedMarks": 2,
+          "maxMarks": 2,
+          "answer": "",
+          "teacherComment": "No answer submitted.",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-8",
+          "type": "short_answer",
+          "status": "checked",
+          "awardedMarks": 2,
+          "maxMarks": 2,
+          "answer": "",
+          "teacherComment": "No answer submitted.",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q8a-1",
+          "type": "programming",
+          "status": "checked",
+          "awardedMarks": 5,
+          "maxMarks": 5,
+          "answer": "<!DOCTYPE HTML > \n<html>\n<head><title>helooooo</title>\n</head>\n<body><h1>My college</h1>\n<hr>\n<p>thhis is my college this is vrey timewaste college </p>\n<ol><li>sci</li><li>comar</li><li>arts</li></ol>\n<ul><li>NOO</li><li>nooo</li><li>college is very noob </li></ul>\n</body>\n</html>",
+          "teacherRequired": true,
+          "choiceGroup": "",
+          "choiceMax": 0,
+          "teacherComment": ""
+        },
+        {
+          "id": "q8b-2",
+          "type": "programming",
+          "status": "checked",
+          "awardedMarks": 5,
+          "maxMarks": 5,
+          "choiceGroup": "",
+          "choiceMax": 0,
+          "teacherComment": ""
+        }
+      ],
+      "submittedAt": "2026-10-22T04:50:56.326Z",
+      "startedAt": "2026-10-22T04:42:54.285Z",
+      "autoSubmitted": false,
+      "antiCheat": {
+        "tabSwitches": 1,
+        "fullscreenExits": 0,
+        "shortcutAttempts": 8,
+        "copyAttempts": 0,
+        "violationCount": 9
+      },
+      "checkedAt": "2026-10-22T04:52:12.353Z",
+      "checkedBy": "admin@onlineexam.com"
+    },
+    "result-1792644787836-86e533c7": {
+      "id": "result-1792644787836-86e533c7",
+      "attemptId": "f9116af1-5c0a-4d34-8de9-e5be27c3ee6d",
+      "student": {
+        "studentId": "Rahul@123",
+        "name": "Rahul",
+        "rollNumber": "123",
+        "className": "12th-B"
+      },
+      "exam": {
+        "id": "it-std12-80-textbook-001",
+        "title": "Standard XII Information Technology — 80 Marks Textbook Practice Test",
+        "subject": "Information Technology",
+        "variantNumber": 2
+      },
+      "score": 0,
+      "objectiveScore": 0,
+      "totalMarks": 80,
+      "subjectiveMax": 20,
+      "subjectiveMarks": 0,
+      "subjectiveChecked": false,
+      "passingMarks": 28,
+      "percentage": 0,
+      "passed": false,
+      "correct": 0,
+      "wrong": 0,
+      "skipped": 53,
+      "attempted": 0,
+      "review": [
+        {
+          "id": "q1-1",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-2",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-3",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-4",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-5",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-6",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-7",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-8",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-9",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-10",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-1",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-2",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-3",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-4",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-5",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-6",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-7",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-8",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-9",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-10",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-1",
+          "type": "mcq1",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-2",
+          "type": "mcq1",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-3",
+          "type": "mcq1",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-4",
+          "type": "mcq1",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-5",
+          "type": "mcq1",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-6",
+          "type": "mcq1",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-7",
+          "type": "mcq1",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-8",
+          "type": "mcq1",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-9",
+          "type": "mcq1",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-10",
+          "type": "mcq1",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-1",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-2",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-3",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-4",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-5",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-6",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-7",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-8",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-9",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-10",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q5-1",
+          "type": "mcq3",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 3,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q5-2",
+          "type": "mcq3",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 3,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q6-1",
+          "type": "match",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 4,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q7-1",
+          "type": "short_answer",
+          "status": "checked",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "answer": "",
+          "teacherComment": "No answer submitted.",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-2",
+          "type": "short_answer",
+          "status": "checked",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "answer": "",
+          "teacherComment": "No answer submitted.",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-3",
+          "type": "short_answer",
+          "status": "checked",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "answer": "",
+          "teacherComment": "No answer submitted.",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-4",
+          "type": "short_answer",
+          "status": "checked",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "answer": "",
+          "teacherComment": "No answer submitted.",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-5",
+          "type": "short_answer",
+          "status": "checked",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "answer": "",
+          "teacherComment": "No answer submitted.",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-6",
+          "type": "short_answer",
+          "status": "checked",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "answer": "",
+          "teacherComment": "No answer submitted.",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-7",
+          "type": "short_answer",
+          "status": "checked",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "answer": "",
+          "teacherComment": "No answer submitted.",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-8",
+          "type": "short_answer",
+          "status": "checked",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "answer": "",
+          "teacherComment": "No answer submitted.",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q8a-1",
+          "type": "programming",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 5,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q8b-2",
+          "type": "programming",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 5,
+          "choiceGroup": "",
+          "choiceMax": 0
+        }
+      ],
+      "submittedAt": "2026-10-22T04:53:07.838Z",
+      "startedAt": "2026-10-22T04:42:54.285Z",
+      "autoSubmitted": true,
+      "antiCheat": {
+        "tabSwitches": 1,
+        "fullscreenExits": 0,
+        "shortcutAttempts": 0,
+        "copyAttempts": 0,
+        "violationCount": 1
+      }
+    },
+    "result-1792646825088-42569efe": {
+      "id": "result-1792646825088-42569efe",
+      "attemptId": "64ab9cfc-7f05-4ddf-bf07-bf6b41800a81",
+      "student": {
+        "studentId": "Rahul@123",
+        "name": "Rahul",
+        "rollNumber": "123",
+        "className": "12th-B"
+      },
+      "exam": {
+        "id": "it-std12-80-textbook-001",
+        "title": "Standard XII Information Technology — 80 Marks Textbook Practice Test",
+        "subject": "Information Technology",
+        "variantNumber": 2
+      },
+      "score": 16,
+      "objectiveScore": 16,
+      "totalMarks": 80,
+      "subjectiveMax": 20,
+      "subjectiveMarks": 0,
+      "subjectiveChecked": false,
+      "passingMarks": 28,
+      "percentage": 20,
+      "passed": false,
+      "correct": 15,
+      "wrong": 19,
+      "skipped": 12,
+      "attempted": 34,
+      "review": [
+        {
+          "id": "q1-1",
+          "type": "fill_blank",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-2",
+          "type": "fill_blank",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-3",
+          "type": "fill_blank",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-4",
+          "type": "fill_blank",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-5",
+          "type": "fill_blank",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-6",
+          "type": "fill_blank",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-7",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-8",
+          "type": "fill_blank",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-9",
+          "type": "fill_blank",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-10",
+          "type": "fill_blank",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-1",
+          "type": "true_false",
+          "status": "correct",
+          "awardedMarks": 1,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-2",
+          "type": "true_false",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-3",
+          "type": "true_false",
+          "status": "correct",
+          "awardedMarks": 1,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-4",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-5",
+          "type": "true_false",
+          "status": "correct",
+          "awardedMarks": 1,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-6",
+          "type": "true_false",
+          "status": "correct",
+          "awardedMarks": 1,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-7",
+          "type": "true_false",
+          "status": "correct",
+          "awardedMarks": 1,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-8",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-9",
+          "type": "true_false",
+          "status": "correct",
+          "awardedMarks": 1,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-10",
+          "type": "true_false",
+          "status": "correct",
+          "awardedMarks": 1,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-1",
+          "type": "mcq1",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-2",
+          "type": "mcq1",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-3",
+          "type": "mcq1",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-4",
+          "type": "mcq1",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-5",
+          "type": "mcq1",
+          "status": "correct",
+          "awardedMarks": 1,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-6",
+          "type": "mcq1",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-7",
+          "type": "mcq1",
+          "status": "correct",
+          "awardedMarks": 1,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-8",
+          "type": "mcq1",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-9",
+          "type": "mcq1",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-10",
+          "type": "mcq1",
+          "status": "correct",
+          "awardedMarks": 1,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-1",
+          "type": "mcq2",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-2",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-3",
+          "type": "mcq2",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-4",
+          "type": "mcq2",
+          "status": "partial",
+          "awardedMarks": 1,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-5",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-6",
+          "type": "mcq2",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-7",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-8",
+          "type": "mcq2",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-9",
+          "type": "mcq2",
+          "status": "partial",
+          "awardedMarks": 1,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-10",
+          "type": "mcq2",
+          "status": "partial",
+          "awardedMarks": 1,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q5-1",
+          "type": "mcq3",
+          "status": "partial",
+          "awardedMarks": 2,
+          "maxMarks": 3,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q5-2",
+          "type": "mcq3",
+          "status": "partial",
+          "awardedMarks": 1,
+          "maxMarks": 3,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q6-1",
+          "type": "match",
+          "status": "wrong",
+          "awardedMarks": 0,
+          "maxMarks": 4,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q7-1",
+          "type": "short_answer",
+          "status": "pending",
+          "awardedMarks": null,
+          "maxMarks": 2,
+          "answer": "fgfdhgfhghgh",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-2",
+          "type": "short_answer",
+          "status": "checked",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "answer": "",
+          "teacherComment": "No answer submitted.",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-3",
+          "type": "short_answer",
+          "status": "pending",
+          "awardedMarks": null,
+          "maxMarks": 2,
+          "answer": "svfdgfdg",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-4",
+          "type": "short_answer",
+          "status": "checked",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "answer": "",
+          "teacherComment": "No answer submitted.",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-5",
+          "type": "short_answer",
+          "status": "pending",
+          "awardedMarks": null,
+          "maxMarks": 2,
+          "answer": "gfdgfdgfg",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-6",
+          "type": "short_answer",
+          "status": "pending",
+          "awardedMarks": null,
+          "maxMarks": 2,
+          "answer": "fggdg",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-7",
+          "type": "short_answer",
+          "status": "pending",
+          "awardedMarks": null,
+          "maxMarks": 2,
+          "answer": "fgfdgfgfg",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-8",
+          "type": "short_answer",
+          "status": "checked",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "answer": "",
+          "teacherComment": "No answer submitted.",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q8a-1",
+          "type": "programming",
+          "status": "pending",
+          "awardedMarks": null,
+          "maxMarks": 5,
+          "answer": "rggggggggggggggggggfssssssssssfgfaghetahfgjkdvckuydavchdagvcdavjcdabjcvhdvdsvsfv",
+          "teacherRequired": true,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q8b-2",
+          "type": "programming",
+          "status": "pending",
+          "awardedMarks": null,
+          "maxMarks": 5,
+          "answer": "sbfsbfbfdbgdbgdbgdgdbgdb  ",
+          "teacherRequired": true,
+          "choiceGroup": "",
+          "choiceMax": 0
+        }
+      ],
+      "submittedAt": "2026-10-22T05:27:05.089Z",
+      "startedAt": "2026-10-22T05:21:20.435Z",
+      "autoSubmitted": true,
+      "antiCheat": {
+        "tabSwitches": 7,
+        "fullscreenExits": 0,
+        "shortcutAttempts": 0,
+        "copyAttempts": 0,
+        "violationCount": 7
+      }
+    },
+    "result-1792646825675-235b6fd4": {
+      "id": "result-1792646825675-235b6fd4",
+      "attemptId": "ed9487d5-e3dc-422d-ab01-426d6f68a9bd",
+      "student": {
+        "studentId": "Nandu@12",
+        "name": "Nandu",
+        "rollNumber": "12",
+        "className": "12th-B"
+      },
+      "exam": {
+        "id": "it-std12-80-textbook-001",
+        "title": "Standard XII Information Technology — 80 Marks Textbook Practice Test",
+        "subject": "Information Technology",
+        "variantNumber": 16
+      },
+      "score": 0,
+      "objectiveScore": 0,
+      "totalMarks": 80,
+      "subjectiveMax": 20,
+      "subjectiveMarks": 0,
+      "subjectiveChecked": false,
+      "passingMarks": 28,
+      "percentage": 0,
+      "passed": false,
+      "correct": 0,
+      "wrong": 0,
+      "skipped": 53,
+      "attempted": 0,
+      "review": [
+        {
+          "id": "q1-1",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-2",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-3",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-4",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-5",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-6",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-7",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-8",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-9",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q1-10",
+          "type": "fill_blank",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-1",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-2",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-3",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-4",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-5",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-6",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-7",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-8",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-9",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q2-10",
+          "type": "true_false",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-1",
+          "type": "mcq1",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-2",
+          "type": "mcq1",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-3",
+          "type": "mcq1",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-4",
+          "type": "mcq1",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-5",
+          "type": "mcq1",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-6",
+          "type": "mcq1",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-7",
+          "type": "mcq1",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-8",
+          "type": "mcq1",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-9",
+          "type": "mcq1",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q3-10",
+          "type": "mcq1",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 1,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-1",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-2",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-3",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-4",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-5",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-6",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-7",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-8",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-9",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q4-10",
+          "type": "mcq2",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q5-1",
+          "type": "mcq3",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 3,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q5-2",
+          "type": "mcq3",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 3,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q6-1",
+          "type": "match",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 4,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q7-1",
+          "type": "short_answer",
+          "status": "checked",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "answer": "",
+          "teacherComment": "No answer submitted.",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-2",
+          "type": "short_answer",
+          "status": "checked",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "answer": "",
+          "teacherComment": "No answer submitted.",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-3",
+          "type": "short_answer",
+          "status": "checked",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "answer": "",
+          "teacherComment": "No answer submitted.",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-4",
+          "type": "short_answer",
+          "status": "checked",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "answer": "",
+          "teacherComment": "No answer submitted.",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-5",
+          "type": "short_answer",
+          "status": "checked",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "answer": "",
+          "teacherComment": "No answer submitted.",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-6",
+          "type": "short_answer",
+          "status": "checked",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "answer": "",
+          "teacherComment": "No answer submitted.",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-7",
+          "type": "short_answer",
+          "status": "checked",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "answer": "",
+          "teacherComment": "No answer submitted.",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q7-8",
+          "type": "short_answer",
+          "status": "checked",
+          "awardedMarks": 0,
+          "maxMarks": 2,
+          "answer": "",
+          "teacherComment": "No answer submitted.",
+          "choiceGroup": "Q7",
+          "choiceMax": 5
+        },
+        {
+          "id": "q8a-1",
+          "type": "programming",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 5,
+          "choiceGroup": "",
+          "choiceMax": 0
+        },
+        {
+          "id": "q8b-1",
+          "type": "programming",
+          "status": "skipped",
+          "awardedMarks": 0,
+          "maxMarks": 5,
+          "choiceGroup": "",
+          "choiceMax": 0
+        }
+      ],
+      "submittedAt": "2026-10-22T05:27:05.678Z",
+      "startedAt": "2026-10-22T05:21:20.435Z",
+      "autoSubmitted": true,
+      "antiCheat": {
+        "tabSwitches": 1,
+        "fullscreenExits": 0,
+        "shortcutAttempts": 0,
+        "copyAttempts": 0,
+        "violationCount": 1
+      }
+    }
+  },
+  "submissions": {
+    "result-1792644656324-2e1b3e6e": {
+      "resultId": "result-1792644656324-2e1b3e6e",
+      "attemptId": "ef22b900-b89c-42c6-b8f2-0cfd8a3ba992",
+      "examId": "it-std12-80-textbook-001",
+      "student": {
+        "studentId": "Rahul@123",
+        "name": "Rahul",
+        "rollNumber": "123",
+        "className": "12th-B"
+      },
+      "answers": {
+        "q1-3": "dgfdg",
+        "q2-9": null,
+        "q3-7": 0,
+        "q1-6": "fgfdg",
+        "q1-1": "gfgfg",
+        "q2-7": 0,
+        "q2-2": null,
+        "q2-1": 1,
+        "q2-5": null,
+        "q3-10": 0,
+        "q3-3": 3,
+        "q3-9": 1,
+        "q3-2": 3,
+        "q3-5": 2,
+        "q3-4": 1,
+        "q3-6": 1,
+        "q3-8": 1,
+        "q3-1": null,
+        "q5-2": [
+          1,
+          2,
+          4
+        ],
+        "q5-1": [
+          0,
+          3
+        ],
+        "q6-1": {
+          "0": "2",
+          "1": "3",
+          "2": "2",
+          "3": "3"
+        },
+        "q7-1": "grggg",
+        "q7-2": "gtjyj",
+        "q7-3": "kjkuk",
+        "q7-4": "",
+        "q2-3": 1,
+        "q8a-1": "<!DOCTYPE HTML > \n<html>\n<head><title>helooooo</title>\n</head>\n<body><h1>My college</h1>\n<hr>\n<p>thhis is my college this is vrey timewaste college </p>\n<ol><li>sci</li><li>comar</li><li>arts</li></ol>\n<ul><li>NOO</li><li>nooo</li><li>college is very noob </li></ul>\n</body>\n</html>",
+        "q8b-2": ""
+      },
+      "autoSubmitted": false,
+      "submittedAt": "2026-10-22T04:50:56.326Z",
+      "antiCheat": {
+        "tabSwitches": 1,
+        "fullscreenExits": 0,
+        "shortcutAttempts": 8,
+        "copyAttempts": 0,
+        "violationCount": 9
+      }
+    },
+    "result-1792644787836-86e533c7": {
+      "resultId": "result-1792644787836-86e533c7",
+      "attemptId": "f9116af1-5c0a-4d34-8de9-e5be27c3ee6d",
+      "examId": "it-std12-80-textbook-001",
+      "student": {
+        "studentId": "Rahul@123",
+        "name": "Rahul",
+        "rollNumber": "123",
+        "className": "12th-B"
+      },
+      "answers": {
+        "q1-3": ""
+      },
+      "autoSubmitted": true,
+      "submittedAt": "2026-10-22T04:53:07.838Z",
+      "antiCheat": {
+        "tabSwitches": 1,
+        "fullscreenExits": 0,
+        "shortcutAttempts": 0,
+        "copyAttempts": 0,
+        "violationCount": 1
+      }
+    },
+    "result-1792646825088-42569efe": {
+      "resultId": "result-1792646825088-42569efe",
+      "attemptId": "64ab9cfc-7f05-4ddf-bf07-bf6b41800a81",
+      "examId": "it-std12-80-textbook-001",
+      "student": {
+        "studentId": "Rahul@123",
+        "name": "Rahul",
+        "rollNumber": "123",
+        "className": "12th-B"
+      },
+      "answers": {
+        "q1-3": "dffdsdfsgf",
+        "q1-8": "fggffg",
+        "q1-2": "fgfdgfdgfdg",
+        "q1-9": "fgfgfg",
+        "q1-6": "fggfg",
+        "q1-1": "gfgfgf",
+        "q1-4": "fgfgfg",
+        "q1-10": "ffgfg",
+        "q1-5": "fggffg",
+        "q1-7": "",
+        "q2-7": 0,
+        "q2-2": 1,
+        "q2-1": 0,
+        "q2-5": 1,
+        "q2-3": 0,
+        "q2-9": 0,
+        "q2-4": null,
+        "q2-10": 1,
+        "q2-8": null,
+        "q2-6": 0,
+        "q3-7": 0,
+        "q3-10": 1,
+        "q3-3": null,
+        "q3-9": 2,
+        "q3-2": 2,
+        "q3-5": 2,
+        "q3-4": 2,
+        "q3-6": 3,
+        "q3-8": null,
+        "q4-4": [
+          1
+        ],
+        "q4-6": [
+          1
+        ],
+        "q4-9": [
+          3
+        ],
+        "q4-1": [
+          2
+        ],
+        "q4-3": [
+          0
+        ],
+        "q4-5": [],
+        "q4-7": [],
+        "q4-2": [],
+        "q4-8": [
+          2
+        ],
+        "q4-10": [
+          1
+        ],
+        "q5-2": [
+          1,
+          2,
+          4
+        ],
+        "q5-1": [
+          0,
+          1,
+          3
+        ],
+        "q6-1": {
+          "0": "3",
+          "1": "2",
+          "2": "1",
+          "3": "0"
+        },
+        "q7-1": "fgfdhgfhghgh",
+        "q7-2": "",
+        "q7-3": "svfdgfdg",
+        "q7-4": "",
+        "q7-6": "fggdg",
+        "q7-8": "",
+        "q7-5": "gfdgfdgfg",
+        "q7-7": "fgfdgfgfg",
+        "q8a-1": "rggggggggggggggggggfssssssssssfgfaghetahfgjkdvckuydavchdagvcdavjcdabjcvhdvdsvsfv",
+        "q8b-2": "sbfsbfbfdbgdbgdbgdgdbgdb  "
+      },
+      "autoSubmitted": true,
+      "submittedAt": "2026-10-22T05:27:05.089Z",
+      "antiCheat": {
+        "tabSwitches": 7,
+        "fullscreenExits": 0,
+        "shortcutAttempts": 0,
+        "copyAttempts": 0,
+        "violationCount": 7
+      }
+    },
+    "result-1792646825675-235b6fd4": {
+      "resultId": "result-1792646825675-235b6fd4",
+      "attemptId": "ed9487d5-e3dc-422d-ab01-426d6f68a9bd",
+      "examId": "it-std12-80-textbook-001",
+      "student": {
+        "studentId": "Nandu@12",
+        "name": "Nandu",
+        "rollNumber": "12",
+        "className": "12th-B"
+      },
+      "answers": {
+        "q1-4": ""
+      },
+      "autoSubmitted": true,
+      "submittedAt": "2026-10-22T05:27:05.678Z",
+      "antiCheat": {
+        "tabSwitches": 1,
+        "fullscreenExits": 0,
+        "shortcutAttempts": 0,
+        "copyAttempts": 0,
+        "violationCount": 1
+      }
+    }
+  },
+  "antiCheatLogs": {
+    "result-1792644656324-2e1b3e6e": {
+      "resultId": "result-1792644656324-2e1b3e6e",
+      "examId": "it-std12-80-textbook-001",
+      "student": {
+        "studentId": "Rahul@123",
+        "name": "Rahul",
+        "rollNumber": "123",
+        "className": "12th-B"
+      },
+      "antiCheat": {
+        "tabSwitches": 1,
+        "fullscreenExits": 0,
+        "shortcutAttempts": 8,
+        "copyAttempts": 0,
+        "violationCount": 9
+      },
+      "createdAt": "2026-10-22T04:50:56.326Z"
+    },
+    "result-1792644787836-86e533c7": {
+      "resultId": "result-1792644787836-86e533c7",
+      "examId": "it-std12-80-textbook-001",
+      "student": {
+        "studentId": "Rahul@123",
+        "name": "Rahul",
+        "rollNumber": "123",
+        "className": "12th-B"
+      },
+      "antiCheat": {
+        "tabSwitches": 1,
+        "fullscreenExits": 0,
+        "shortcutAttempts": 0,
+        "copyAttempts": 0,
+        "violationCount": 1
+      },
+      "createdAt": "2026-10-22T04:53:07.838Z"
+    },
+    "result-1792646825088-42569efe": {
+      "resultId": "result-1792646825088-42569efe",
+      "examId": "it-std12-80-textbook-001",
+      "student": {
+        "studentId": "Rahul@123",
+        "name": "Rahul",
+        "rollNumber": "123",
+        "className": "12th-B"
+      },
+      "antiCheat": {
+        "tabSwitches": 7,
+        "fullscreenExits": 0,
+        "shortcutAttempts": 0,
+        "copyAttempts": 0,
+        "violationCount": 7
+      },
+      "createdAt": "2026-10-22T05:27:05.089Z"
+    },
+    "result-1792646825675-235b6fd4": {
+      "resultId": "result-1792646825675-235b6fd4",
+      "examId": "it-std12-80-textbook-001",
+      "student": {
+        "studentId": "Nandu@12",
+        "name": "Nandu",
+        "rollNumber": "12",
+        "className": "12th-B"
+      },
+      "antiCheat": {
+        "tabSwitches": 1,
+        "fullscreenExits": 0,
+        "shortcutAttempts": 0,
+        "copyAttempts": 0,
+        "violationCount": 1
+      },
+      "createdAt": "2026-10-22T05:27:05.678Z"
+    }
+  }
+}
