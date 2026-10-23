@@ -9,6 +9,8 @@ const zlib = require('zlib');
 require('dotenv').config();
 const { db, enabled: firebaseEnabled, localMode, requireFirebase } = require('./firebase');
 const { IT_80_EXAM } = require('./it80-exam');
+const { IT_SEM1_EXAM } = require('./sem1-exam');
+const { normalizeFillBlank, isFillBlankCorrect, normalizeMatchAnswer, isMatchCorrect, getMatchAwardedMarks, getMultiSelectAwardedMarks, isEmptyAnswer } = require('./sem1-grading');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -528,6 +530,7 @@ function publicExam(exam, variant = null, rollNumber = '') {
     questions: orderedQuestions.map(q => {
       const safe = { ...q, ...(q.type==='programming' ? {marks:5} : {}) };
       delete safe.answer;
+      delete safe.acceptedAnswers;
       delete safe.optionOrder;
       return { ...safe, type: safe.type || (safe.options?.length ? 'mcq1' : 'short_answer') };
     }),
@@ -538,7 +541,7 @@ function publicExam(exam, variant = null, rollNumber = '') {
 
 function normalizeText(v) { return String(v ?? '').trim().toLowerCase().replace(/\s+/g, ' '); }
 function normalizeHref(v) { return String(v ?? '').trim().replace(/\s+/g, '').replace(/^https?:\/\//i, '').replace(/\/$/, '').toLowerCase(); }
-function emptyAnswer(v) { return v === undefined || v === null || (typeof v === 'string' && !v.trim()) || (Array.isArray(v) && v.length === 0); }
+function emptyAnswer(v) { return isEmptyAnswer(v); }
 
 function tokenizeAnswer(v) {
   return normalizeText(v)
@@ -562,32 +565,20 @@ function gradeSubjectiveQuestion(q, submitted) {
 
 function getObjectiveAwardedMarks(q, submitted) {
   const maxMarks = Number(q.marks) || 0;
-  if (q.type !== 'mcq2' && q.type !== 'mcq3') {
-    return isCorrectQuestion(q, submitted) ? maxMarks : 0;
-  }
-  const expected = Array.isArray(q.answer) ? [...new Set(q.answer.map(Number))] : [];
-  const selected = Array.isArray(submitted) ? [...new Set(submitted.map(Number))] : [];
-  if (!expected.length || !selected.length) return 0;
-  const correctSelected = selected.filter(v => expected.includes(v)).length;
-  // Multi-correct questions award proportional credit: each correctly
-  // selected alternative earns an equal share of the question's marks.
-  // Wrong selections do not create negative marks.
-  return Number(((correctSelected / expected.length) * maxMarks).toFixed(2));
+  if (q.type === 'match') return getMatchAwardedMarks(q, submitted);
+  if (q.type === 'mcq2' || q.type === 'mcq3') return getMultiSelectAwardedMarks(q, submitted);
+  return isCorrectQuestion(q, submitted) ? maxMarks : 0;
 }
 
 function isCorrectQuestion(q, submitted) {
   if (q.type === 'mcq1' || q.type === 'true_false') return Number(submitted) === Number(q.answer);
+  if (q.type === 'fill_blank') return isFillBlankCorrect(q, submitted);
   if (q.type === 'mcq2' || q.type === 'mcq3') {
     const a = Array.isArray(q.answer) ? q.answer.map(Number).sort((x,y)=>x-y) : [];
     const b = Array.isArray(submitted) ? submitted.map(Number).sort((x,y)=>x-y) : [];
     return a.length === b.length && a.every((v,i)=>v === b[i]);
   }
-  if (q.type === 'match') {
-    const value = submitted && typeof submitted === 'object' ? submitted : {};
-    const expected = q.answer && typeof q.answer === 'object' ? q.answer : {};
-    const keys = Object.keys(expected);
-    return keys.length > 0 && keys.every(k => String(value[k] ?? '') === String(expected[k] ?? ''));
-  }
+  if (q.type === 'match') return isMatchCorrect(q, submitted);
   if (q.type === 'href_page') {
     const value = submitted && typeof submitted === 'object' ? submitted : {};
     return normalizeHref(value.href) === normalizeHref(q.href) && normalizeText(value.pageTitle) === normalizeText(q.pageTitle);
@@ -604,10 +595,13 @@ function normalizeQuestion(q, index) {
   let answer = q.answer;
   if (['mcq2','mcq3'].includes(type)) answer = Array.isArray(answer) ? answer.map(Number).sort((a,b)=>a-b) : null;
   else if (type === 'mcq1' || type === 'true_false') answer = (answer===null||answer===undefined||answer==='') ? null : Number(answer);
+  else if (type === 'match') answer = normalizeMatchAnswer(answer);
+  else if (type === 'fill_blank') answer = Array.isArray(answer) ? answer.map(v => String(v ?? '').trim()).filter(Boolean) : String(answer ?? '').trim();
   else answer = String(answer ?? '').trim();
   const codeLanguage = String(q.codeLanguage || 'html').toLowerCase();
   return {
     id: q.id ?? index + 1, type, question: String(q.question || '').trim(), options, answer,
+    acceptedAnswers: Array.isArray(q.acceptedAnswers) ? q.acceptedAnswers.map(v => String(v ?? '').trim()).filter(Boolean) : [],
     marks: type === 'programming' ? 5 : (Number(q.marks) > 0 ? Number(q.marks) : 1),
     orGroup: String(q.orGroup || '').trim(), orOption: String(q.orOption || '').trim(),
     sectionId: String(q.sectionId || '').trim(), sectionTitle: String(q.sectionTitle || '').trim(),
@@ -884,6 +878,16 @@ app.post('/api/admin/exams/from-pdf', requireAdmin, express.raw({ type: 'applica
     await requireFirebase().collection('exams').doc(id).set(exam);
     await writeAudit('exam_imported_from_pdf',{admin:req.admin.email,examId:id,questionCount:questions.length});
     res.status(201).json({ok:true,exam:publicExam(exam),message:`Imported ${questions.length} questions. Exam created and published automatically.`});
+  } catch(e){next(e);}
+});
+
+app.post('/api/admin/exams/seed-it-sem1', requireAdmin, async (req,res,next)=>{
+  try {
+    const exam = JSON.parse(JSON.stringify(IT_SEM1_EXAM));
+    exam.updatedAt = new Date().toISOString();
+    await requireFirebase().collection('exams').doc(exam.id).set(exam, { merge:true });
+    await writeAudit('it_sem1_exam_seeded',{admin:req.admin.email,examId:exam.id,questionCount:exam.questions.length});
+    res.json({ok:true,exam:publicExam(exam),message:'Standard XII IT Semester 1 exam loaded: 50 marks, 90 minutes, all 8 sections.'});
   } catch(e){next(e);}
 });
 

@@ -19,3 +19,7 @@ If an ANSWER KEY is present, objective questions can be auto-graded. If the PDF 
 
 ### Scanned PDFs
 Image-only/scanned PDFs require OCR. The built-in importer does not claim to OCR arbitrary scanned documents.
+
+
+## Supplied Sem 1 50-mark paper
+Use Admin → Exams → **Load IT Sem 1 (50 Marks)** instead of PDF Import. This structured exam seed avoids the generic parser limitations for Select THREE and Match the Following.
